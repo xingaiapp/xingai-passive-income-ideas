@@ -1,3 +1,3 @@
-"""XingAI Daily Passive Income Idea 智报 — package scaffold (not implemented)."""
+"""XingAI Daily Passive Income Idea 智报 — report worker."""
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"

@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **project-init web shell shipped (0.1.1)** · report worker still pending  
+> Status: **0.1.2** — web shell + offline worker MVP (mock PDF + Resend dry-run)  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract
@@ -13,12 +13,12 @@
 
 ## Phase 1 — Offline MVP (worker)
 
-- [ ] Pydantic snapshot models
-- [ ] Mock-first research snapshot + fixtures
-- [ ] ReportLab PDF (XingAI 智报 visual template)
-- [ ] PDF render-to-image QA gate
-- [ ] Email Summary (简体中文) + Resend dry-run
-- [ ] CLI: `generate | validate-pdf | send | run-daily`
+- [x] Snapshot dataclasses (`IdeaSnapshot` + evidence/source types)
+- [x] Mock-first research snapshot + Austin/53/.NET profile fixture
+- [x] ReportLab PDF (XingAI 智报 visual template, 13 sections)
+- [x] PDF text/section QA gate (`pypdf`; render-to-image still optional later)
+- [x] Email Summary (简体中文) + Resend dry-run / `--live`
+- [x] CLI: `generate | validate-pdf | send | run-daily`
 
 ## Phase 2 — Live research
 

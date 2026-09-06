@@ -18,6 +18,9 @@ build/
 *.egg-info/
 out/
 tmp/
+worker/output/
+worker/logs/
+worker/.venv/
 
 # Next.js
 node_modules/

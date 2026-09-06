@@ -1,6 +1,4 @@
-# XingAI Passive Income Idea 智报
-
-**Version:** 0.1.1
+**Version:** 0.1.2
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -19,7 +17,7 @@ Daily **one-Idea** passive-income research for a defined operator profile (softw
 | Layer | Path |
 |-------|------|
 | Public Next.js shell | repo root (`src/app`) — chrome, en/zh/ko, light/dark, legal, SEO/AEO |
-| Report worker (scaffold) | `worker/` — PDF + Resend pipeline **not implemented yet** |
+| Report worker | `worker/` — mock Idea → ReportLab PDF → Resend (dry-run default) |
 
 ## Local development (web)
 
@@ -30,9 +28,21 @@ npm run dev
 
 Open http://localhost:3000. Set `NEXT_PUBLIC_SITE_URL=https://passive.xingai.app` for production metadata.
 
-## Environment
+## Report worker (Phase 1)
 
-See [`.env.example`](./.env.example). Never commit secrets.
+```bash
+cd worker
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+pytest
+python -m passive_income_zhibao generate
+python -m passive_income_zhibao run-daily          # dry-run email log
+# python -m passive_income_zhibao run-daily --live  # needs RESEND_API_KEY
+```
+
+PDF lands in `worker/output/pdf/`. Fonts: optional `worker/assets/NotoSansSC-*.ttf` (TrueType; see `worker/assets/README.md`). macOS falls back to system CJK fonts.
+
+Env: see [`.env.example`](./.env.example). Default recipient `PASSIVE_INCOME_REPORT_TO=xing@xingai.app`. Never commit secrets.
 
 Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth client before login ships — do not reuse another product’s client.
 
@@ -41,11 +51,15 @@ Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth clie
 
 ## Current version notes
 
+### 0.1.2
+
+- Worker Phase 1: mock Idea snapshot, ReportLab A4 PDF (13 sections, black text / yellow exec box), PDF QA (`pypdf`), 简体中文 email Summary + Resend dry-run / `--live`, CLI `generate | validate-pdf | send | run-daily`.
+- Offline pytest covers PDF QA + dry-run send.
+
 ### 0.1.1
 
 - **project-init baseline:** Next.js mobile chrome (top + drawer + bottom tabs + desktop side nav), en/zh/ko, light/dark, legal EN/zh/ko, robots/sitemap/llms.txt, hero light/dark, mock Today Idea board.
 - Registered on xingai-dot-app as **Soon** (`passive-income` → `passive.xingai.app`).
-- Python worker remains under `worker/` (CLI stub).
 
 ### 0.1.0
 
