@@ -65,10 +65,8 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
               {t.today.ctaArchive}
             </Link>
           </div>
-        </div>
 
-        <div className="hero-stage">
-          <div className="hero-strip motion-enter motion-delay-1" aria-hidden>
+          <div className="hero-strip hero-strip-mobile motion-enter motion-delay-1" aria-hidden>
             <Image
               className="hero-img light-only"
               src="/brand/hero-bg-light-visual.svg"
@@ -86,7 +84,9 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
               priority
             />
           </div>
+        </div>
 
+        <div className="hero-stage">
           <aside className="focus-panel idea-panel motion-enter motion-delay-2" aria-label={t.today.ideaLabel}>
             <header className="focus-panel-head">
               <p className="mock-badge">{badge}</p>

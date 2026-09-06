@@ -1,4 +1,4 @@
-**Version:** 0.2.3
+**Version:** 0.2.4
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -53,6 +53,10 @@ Config: `worker/config/operator_profile.yaml` (`web_fetch`, `llm_polish`), `idea
 See [`.env.example`](./.env.example). Never commit secrets.
 
 ## Current version notes
+
+### 0.2.4
+
+- Desktop Today layout: sticky intro column + full-width Idea panel; decorative strip mobile-only; wider main + narrower sidebar.
 
 ### 0.2.3
 
