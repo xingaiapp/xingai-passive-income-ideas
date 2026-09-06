@@ -1,11 +1,12 @@
 [project]
 name = "xingai-passive-income-ideas"
-version = "0.1.3"
+version = "0.2.0"
 description = "XingAI Daily Passive Income Idea 智报 (report worker)"
 requires-python = ">=3.11"
 dependencies = [
   "reportlab>=4.2",
   "pypdf>=5.0",
+  "pyyaml>=6.0",
 ]
 
 [project.optional-dependencies]

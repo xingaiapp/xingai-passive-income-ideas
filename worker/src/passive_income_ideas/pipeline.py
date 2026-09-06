@@ -5,6 +5,8 @@ from datetime import date
 from pathlib import Path
 
 from .email_report import build_subject, resolve_recipient, send_report
+from .latest_json import write_latest
+from .live_research import build_live_snapshot, resolve_mode
 from .mock_data import build_mock_snapshot
 from .pdf_report import pdf_filename, render_pdf
 from .qa import qa_file, validate_pdf_bytes
@@ -16,8 +18,17 @@ def _output_dir() -> Path:
     return Path(__file__).resolve().parents[2] / "output" / "pdf"
 
 
-def generate(report_day: date | None = None) -> tuple[object, Path]:
-    snapshot = build_mock_snapshot(report_day)
+def generate(
+    report_day: date | None = None,
+    *,
+    mode: str | None = None,
+) -> tuple[object, Path]:
+    resolved = resolve_mode(mode)
+    if resolved == "mock":
+        snapshot = build_mock_snapshot(report_day)
+    else:
+        snapshot = build_live_snapshot(report_day)
+
     pdf_bytes = render_pdf(snapshot)
     errs = validate_pdf_bytes(pdf_bytes)
     if errs:
@@ -26,13 +37,21 @@ def generate(report_day: date | None = None) -> tuple[object, Path]:
     out.mkdir(parents=True, exist_ok=True)
     path = out / pdf_filename(snapshot)
     path.write_bytes(pdf_bytes)
-    log.info("wrote %s (%s bytes)", path, len(pdf_bytes))
+    latest, public_latest = write_latest(snapshot)
+    log.info("wrote %s (%s bytes) mode=%s", path, len(pdf_bytes), resolved)
+    log.info("latest json %s ; ui %s", latest, public_latest)
     return snapshot, path
 
 
-def run_daily(*, dry_run: bool = True, report_day: date | None = None, force: bool = False) -> int:
+def run_daily(
+    *,
+    dry_run: bool = True,
+    report_day: date | None = None,
+    force: bool = False,
+    mode: str | None = None,
+) -> int:
     try:
-        snapshot, path = generate(report_day)
+        snapshot, path = generate(report_day, mode=mode)
     except Exception as exc:  # noqa: BLE001
         log.error("generate failed: %s", exc)
         return 3
@@ -52,7 +71,9 @@ def run_daily(*, dry_run: bool = True, report_day: date | None = None, force: bo
         log.error("send failed: %s", result.message)
         return 4
     print(
-        f"OK dry_run={result.dry_run} to={resolve_recipient()} "
-        f"subject={build_subject(snapshot)!r} attachment={path.name} key={result.idempotency_key}"
+        f"OK dry_run={result.dry_run} mode={resolve_mode(mode)} "
+        f"mock={getattr(snapshot, 'is_mock', True)} "
+        f"to={resolve_recipient()} subject={build_subject(snapshot)!r} "
+        f"attachment={path.name} key={result.idempotency_key}"
     )
     return 0

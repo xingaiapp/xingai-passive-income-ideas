@@ -2,20 +2,27 @@ from __future__ import annotations
 
 from datetime import date, datetime, timezone
 
+from .config import load_operator_profile
 from .models import EvidenceItem, IdeaSnapshot, OperatorProfile, SourceRef
 
-DEFAULT_PROFILE = OperatorProfile(
-    age=53,
-    location="Austin, Texas, USA",
-    background="软件工程、.NET、云平台、AI 与工程管理",
-    goals="财富自由与长期被动收入",
-    constraints=(
-        "不接受赌博式或高杠杆方案",
-        "不接受难以核实的承诺",
-        "不接受需长期高强度全职投入才能启动的方案",
-        "适合 53 岁财富积累阶段：可兼职验证、可外包/自动化",
-    ),
-)
+try:
+    _PROFILE = load_operator_profile()
+except Exception:  # noqa: BLE001
+    _PROFILE = OperatorProfile(
+        age=53,
+        location="Austin, Texas, USA",
+        background="软件工程、.NET、云平台、AI 与工程管理",
+        goals="财富自由与长期被动收入",
+        constraints=(
+            "不接受赌博式或高杠杆方案",
+            "不接受难以核实的承诺",
+            "不接受需长期高强度全职投入才能启动的方案",
+            "适合 53 岁财富积累阶段：可兼职验证、可外包/自动化",
+        ),
+        skills=(".NET", "cloud", "AI", "eng-management"),
+    )
+
+DEFAULT_PROFILE = _PROFILE
 
 
 def build_mock_snapshot(report_day: date | None = None) -> IdeaSnapshot:

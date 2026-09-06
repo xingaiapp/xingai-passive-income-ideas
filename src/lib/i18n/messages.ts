@@ -25,6 +25,8 @@ export type Messages = {
     riskBody: string;
     pdfNote: string;
     mockBadge: string;
+    liveBadge: string;
+    liveProgressBadge: string;
     ctaHow: string;
     ctaArchive: string;
   };
@@ -77,7 +79,9 @@ export const messages: Record<Locale, Messages> = {
       risk: "Biggest risk",
       riskBody: "Demand may be polite interest only — stop if 10 talks yield zero paid intent (mock).",
       pdfNote: "Detailed steps will arrive as PDF: XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf",
-      mockBadge: "Mock Idea — worker not live",
+      mockBadge: "Mock Idea — offline fixture",
+      liveBadge: "Live Idea — from today’s research",
+      liveProgressBadge: "Live Idea — progress update",
       ctaHow: "How delivery works",
       ctaArchive: "Past Ideas",
     },
@@ -165,7 +169,9 @@ export const messages: Record<Locale, Messages> = {
       risk: "最大风险",
       riskBody: "热情不等于付费意愿——若 10 次访谈仍无付费意向则停止（模拟）。",
       pdfNote: "详细步骤将以 PDF 附件送达：XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf",
-      mockBadge: "模拟 Idea — worker 尚未上线",
+      mockBadge: "模拟 Idea — 离线 fixture",
+      liveBadge: "今日研究 · 实时 Idea",
+      liveProgressBadge: "今日研究 · 连续性推进",
       ctaHow: "如何送达",
       ctaArchive: "往日 Idea",
     },
@@ -249,7 +255,9 @@ export const messages: Record<Locale, Messages> = {
       risk: "최대 리스크",
       riskBody: "관심만 있고 지불 의사가 없을 수 있음 — 10회 인터뷰 후 유료 의도 없으면 중단 (목).",
       pdfNote: "상세 단계는 PDF로: XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf",
-      mockBadge: "목 Idea — worker 미가동",
+      mockBadge: "목 Idea — 오프라인 fixture",
+      liveBadge: "오늘 리서치 · 라이브 Idea",
+      liveProgressBadge: "오늘 리서치 · 연속 업데이트",
       ctaHow: "전달 방식",
       ctaArchive: "지난 Idea",
     },

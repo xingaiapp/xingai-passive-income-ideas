@@ -1,0 +1,34 @@
+{
+  "report_date": "2026-09-06",
+  "generated_at": "2026-09-06T12:35:52Z",
+  "idea_id": "ops-checklist-sub",
+  "idea_name": "垂直行业 AI 运维检查清单（订阅制）",
+  "one_liner": "把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
+  "continuity": "progress",
+  "fit_score": 8,
+  "passive_score": 6,
+  "why_fit": "画像：53 岁，Austin, Texas, USA，背景 软件工程、.NET、云平台、AI 与工程管理。目标：财富自由与长期被动收入。技能匹配：.NET, cloud, AI, eng-management, B2B。该 Idea：把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
+  "income_kind": "business_revenue",
+  "income_band": "商业收入（非投资收益）估计：验证后 90 天约 $0–2,000/月（未核实；未做付费验证）",
+  "do_today": "连续性更新（第 2 次选中）：在昨日动作之上推进下一步验证，不换题。 30 分钟：列出 5 个工程负责人，约其中 3 人做 15 分钟访谈（只问：哪些检查仍靠表格/聊天？）",
+  "dont_today": "不要买广告、不要先写完整 SaaS、不要注册复杂公司结构",
+  "biggest_risk": "礼貌兴趣 ≠ 付费意愿；若 10 次访谈零付费意向，立即停止并换题",
+  "is_mock": false,
+  "disclaimer": "仅供参考，不构成金融、税务或商业建议。不保证收入。投资收益与商业收入已分开标注。未核实内容不得当作事实。",
+  "sources": {
+    "s_irs": {
+      "title": "IRS self-employment tax overview",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
+      "as_of": "2026-01-15",
+      "verified": true,
+      "note": "税务提醒页面存在；非对本 Idea 收入的预测"
+    },
+    "s_bls": {
+      "title": "BLS Occupational Employment — software developers (context only)",
+      "url": "https://www.bls.gov/oes/",
+      "as_of": "2026-05-01",
+      "verified": false,
+      "note": "未核实与本 Idea 的直接因果关系"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+# Curated Idea pool for deterministic live picks.
+# Income numbers are estimates only — never treat as verified facts.
+# verified: true only when the URL page itself is the factual claim (e.g. IRS overview exists).
+
+version: 1
+ideas:
+  - idea_id: ops-checklist-sub
+    idea_name: 垂直行业 AI 运维检查清单（订阅制）
+    one_liner: 把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。
+    skills: [.NET, cloud, AI, eng-management, B2B]
+    fit_score: 8
+    passive_score: 6
+    income_kind: business_revenue
+    income_band: "商业收入（非投资收益）估计：验证后 90 天约 $0–2,000/月（未核实；未做付费验证）"
+    startup_capital: "启动资金约 $0–500（域名、邮箱、基础托管）；无需融资"
+    time_per_week: "验证期每周 4–6 小时；若无人付费意向则停止"
+    first_revenue_eta: "若 10 次访谈中出现付费意向，最早 2–4 周可收第一笔（预售/试点，未核实）"
+    scalability: "中：可从单一垂直扩展到相邻行业；提醒可产品化"
+    do_today: "30 分钟：列出 5 个工程负责人，约其中 3 人做 15 分钟访谈（只问：哪些检查仍靠表格/聊天？）"
+    dont_today: "不要买广告、不要先写完整 SaaS、不要注册复杂公司结构"
+    biggest_risk: "礼貌兴趣 ≠ 付费意愿；若 10 次访谈零付费意向，立即停止并换题"
+    stop_rules:
+      - 10 次目标用户访谈仍无明确付费意向
+      - 需要全职 3 个月以上才能做出最小可售版本
+      - 依赖无法核实的流量/收益承诺渠道
+    day7_plan:
+      - "D1：完成 3 次访谈预约与问题清单"
+      - "D2–D3：完成至少 5 次访谈并记录痛点频率"
+      - "D4：起草一页价值主张（谁、什么痛、价格锚点）"
+      - "D5：做出 1 份可交付检查清单样例"
+      - "D6：向 2 位访谈对象展示样例，问是否愿付 $29–$99/月试点"
+      - "D7：写下 go/no-go"
+    day30_goals:
+      - 至少 15 次访谈记录
+      - 1 个可重复交付的清单模板
+      - 至少 1 个付费试点或书面预购意向
+    automation_path:
+      - 周报/提醒邮件自动发送
+      - 检查项版本化与客户空间隔离
+      - LLM 仅作辅助，不作唯一真理来源
+    business_model: "订阅制商业收入：基础清单 $29/月，团队版 $99/月。这不是分红或投资回报率。"
+    competition: "通用项目管理与 ChatGPT 工作流是替代品；差异化在垂直检查项与责任边界，而不是空白 AI 对话框。"
+    market_evidence:
+      - kind: inference
+        text: 中小团队仍常用表格/聊天做发布与巡检（基于职业经验推断，非正式调研统计）。
+        source_ids: []
+      - kind: fact
+        text: 美国自雇者需了解 self-employment tax 义务（IRS 页面存在）。
+        source_ids: [s_irs]
+      - kind: recommendation
+        text: 先卖清单与提醒，再考虑软件化；用预售验证价格。
+        source_ids: []
+    sources:
+      s_irs:
+        title: IRS self-employment tax overview
+        url: https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes
+        as_of: "2026-01-15"
+        verified: true
+        note: 税务提醒页面存在；非对本 Idea 收入的预测
+      s_bls:
+        title: BLS Occupational Employment — software developers (context only)
+        url: https://www.bls.gov/oes/
+        as_of: "2026-05-01"
+        verified: false
+        note: 未核实与本 Idea 的直接因果关系
+
+  - idea_id: net-upgrade-playbook
+    idea_name: .NET 遗留系统升级评估 Playbook（固定价）
+    one_liner: 把你做过的 .NET Framework→现代栈评估做成可重复交付的固定价诊断包，而不是按小时无限外包。
+    skills: [.NET, cloud, eng-management, B2B]
+    fit_score: 8
+    passive_score: 5
+    income_kind: business_revenue
+    income_band: "商业收入估计：每单诊断 $2,500–$7,500；月均取决于成交量（未核实）"
+    startup_capital: "约 $0–300（模板与会议工具）"
+    time_per_week: "验证期每周 5–8 小时"
+    first_revenue_eta: "有现成人脉时 2–6 周可能收到第一单（未核实）"
+    scalability: "中低：可产品化模板与录屏；后期可授权给顾问伙伴"
+    do_today: "30 分钟：列出 8 家仍可能跑 .NET Framework 的前同事/客户，写 3 句 outreach"
+    dont_today: "不要先做完整迁移报价、不要承诺工期与节省金额"
+    biggest_risk: "买方只想免费咨询；无书面范围就开工会拖成无偿顾问"
+    stop_rules:
+      - 12 次 outreach 无一次付费评估意向
+      - 必须驻场全职才能交付
+      - 对方要求无法核实的 ROI 保证
+    day7_plan:
+      - "D1：写清交付物清单（架构图、风险表、90 天路线）"
+      - "D2：定固定价与不含项"
+      - "D3–D5：发出 8 封 outreach"
+      - "D6：完成 1 次免费 20 分钟筛选通话"
+      - "D7：决定是否开第一单范围书"
+    day30_goals:
+      - 至少 2 次付费评估意向
+      - 1 份可复用交付模板
+      - 明确是否进入“模板+伙伴分润”路线
+    automation_path:
+      - 评估问卷自动收集
+      - 报告章节模板化
+      - 录屏讲解可复用
+    business_model: "一次性商业服务费 + 可选月度顾问保留。不是投资收益。"
+    competition: "大型咨询贵且慢；自由职业者散乱。差异化是固定范围的 .NET 专长诊断。"
+    market_evidence:
+      - kind: inference
+        text: 许多企业仍有 .NET Framework 债（行业常识推断，非本周抽样统计）。
+        source_ids: []
+      - kind: fact
+        text: 美国自雇收入需关注 self-employment tax（IRS 页面存在）。
+        source_ids: [s_irs]
+      - kind: recommendation
+        text: 先卖固定价诊断，再谈迁移实施。
+        source_ids: []
+    sources:
+      s_irs:
+        title: IRS self-employment tax overview
+        url: https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes
+        as_of: "2026-01-15"
+        verified: true
+        note: 税务页面存在；非收入预测
+
+  - idea_id: ai-ops-office-hours
+    idea_name: 工程负责人 AI 落地 Office Hours（会员）
+    one_liner: 面向工程经理的小规模会员：双周 office hours + 决策清单，帮团队把 AI 工具用在真实交付上。
+    skills: [AI, eng-management, B2B, cloud]
+    fit_score: 7
+    passive_score: 6
+    income_kind: business_revenue
+    income_band: "商业收入估计：$79–$199/座/月；早期 5–15 人即有意义（未核实）"
+    startup_capital: "约 $0–200（会议与邮件工具）"
+    time_per_week: "验证期每周 3–5 小时"
+    first_revenue_eta: "若 10 人 waitlist 中有 3 人付费，约 2–4 周（未核实）"
+    scalability: "中：可录播沉淀；后期可授权联合主持人"
+    do_today: "30 分钟：写一页会员章程（谁适合/不适合、双周议程、退款规则）并发给 5 位工程负责人征求反馈"
+    dont_today: "不要先做完整课程平台、不要承诺晋升或业绩结果"
+    biggest_risk: "变成免费答疑群；没有议程与边界会不可扩展"
+    stop_rules:
+      - 20 次邀请后 waitlist < 5
+      - 必须每日即时响应才能维持
+      - 成员要求无法核实的业绩保证
+    day7_plan:
+      - "D1：写清会员章程与价格锚点"
+      - "D2–D4：邀请 15 人给反馈"
+      - "D5：整理反对意见"
+      - "D6：开放 5 个创始席预售"
+      - "D7：go/no-go"
+    day30_goals:
+      - 至少 5 名付费或预付创始会员
+      - 2 次 office hours 议程沉淀
+      - 决定是否继续或停止
+    automation_path:
+      - 议程与录像归档
+      - 月度决策清单自动发送
+      - 常见问答知识库
+    business_model: "会员订阅商业收入。不是投资分红。"
+    competition: "泛 AI 社群与大课很多；差异化是工程负责人决策节奏与小规模答疑边界。"
+    market_evidence:
+      - kind: inference
+        text: 工程团队在试 AI 工具但缺少管理节奏（经验推断，未抽样核实）。
+        source_ids: []
+      - kind: fact
+        text: 自雇/独立顾问需了解 self-employment tax（IRS 页面存在）。
+        source_ids: [s_irs]
+      - kind: recommendation
+        text: 先卖小规模会员，再考虑内容产品化。
+        source_ids: []
+    sources:
+      s_irs:
+        title: IRS self-employment tax overview
+        url: https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes
+        as_of: "2026-01-15"
+        verified: true
+        note: 税务页面存在；非收入预测
+
+  - idea_id: dividend-etf-study
+    idea_name: 分红 ETF 学习笔记（非荐股）
+    one_liner: 把公开可查的分红 ETF 机制整理成个人学习笔记与检查清单——明确标注不是投资建议。
+    skills: [AI, eng-management]
+    fit_score: 4
+    passive_score: 3
+    income_kind: investment_return
+    income_band: "投资收益：不预测回报。任何收益率数字若未核对原始披露，一律标未核实。"
+    startup_capital: "学习成本可忽略；真实投资另计且需自行决策"
+    time_per_week: "每周 2–3 小时阅读公开文件"
+    first_revenue_eta: "本 Idea 不以卖课为先；若产品化需另开商业 Idea"
+    scalability: "低（学习）/ 若改成付费简报则另评估"
+    do_today: "30 分钟：只读 1 份公开 ETF summary prospectus 目录，列出 5 个你仍不懂的词"
+    dont_today: "不要根据未核实收益率下单；不要向他人推荐具体标的"
+    biggest_risk: "把学习笔记误当成投资建议；或引用过期分红数据"
+    stop_rules:
+      - 开始对外承诺收益
+      - 使用无法核对来源的收益率截图
+      - 与赌博式杠杆产品混为一谈
+    day7_plan:
+      - "D1–D3：读懂费用、持仓集中度、分红来源三类问题"
+      - "D4–D5：建立个人检查清单（仍非建议）"
+      - "D6–D7：决定是否停止或转为商业内容 Idea"
+    day30_goals:
+      - 1 份仅供自己的检查清单
+      - 零对外荐股
+      - 明确是否另开商业内容线
+    automation_path:
+      - 定期提醒重读披露文件日期
+      - 来源链接归档
+    business_model: "默认无商业收入。若未来卖简报，必须与投资建议严格隔离。"
+    competition: "免费财经内容极多；本条默认是个人学习，不是产品。"
+    market_evidence:
+      - kind: recommendation
+        text: 投资类 Idea 必须与商业收入分开标注，且禁止收益承诺。
+        source_ids: []
+      - kind: inference
+        text: 公开 prospectus 是可核对起点（具体数字需自行打开文件核实）。
+        source_ids: []
+    sources:
+      s_sec:
+        title: SEC — mutual funds and ETFs investor info
+        url: https://www.sec.gov/investor/pubs/inwsmf.htm
+        as_of: "2026-01-01"
+        verified: false
+        note: 投资者教育入口；具体标的数据未在此核验

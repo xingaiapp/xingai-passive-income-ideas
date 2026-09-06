@@ -21,6 +21,10 @@ tmp/
 worker/output/
 worker/logs/
 worker/.venv/
+worker/data/*.sqlite
+worker/data/*.sqlite-*
+!worker/data/.gitkeep
+
 
 # Next.js
 node_modules/

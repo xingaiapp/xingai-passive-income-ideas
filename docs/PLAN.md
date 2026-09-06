@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **0.1.7** — web shell + offline worker MVP (mock PDF + Resend dry-run)  
+> Status: **0.2.0** — live catalog research + memory + Today UI wired  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract
@@ -8,8 +8,8 @@
 - [x] Private GitHub repo + README / DISCLAIMER / PLAN
 - [x] ADR-001: product boundary (personal daily Idea report vs Invest 智报 vs Opportunity Radar)
 - [x] project-init public shell (chrome, i18n, theme, legal, SEO/AEO, dot-app Soon)
-- [ ] Operator profile config (age/locale/skills/constraints) as versioned YAML
-- [ ] Idea memory store (SQLite/Turso) for anti-repeat + “still best → progress update”
+- [x] Operator profile config (age/locale/skills/constraints) as versioned YAML
+- [x] Idea memory store (SQLite) for anti-repeat + “still best → progress update”
 
 ## Phase 1 — Offline MVP (worker)
 
@@ -22,16 +22,17 @@
 
 ## Phase 2 — Live research
 
-- [ ] Source adapters + `未核实` fail-closed
-- [ ] Dedup / continuity policy
-- [ ] Scheduled run + idempotent send
-- [ ] Wire Today UI to real latest Idea
+- [x] Source adapters + `未核实` fail-closed (catalog + verified flags)
+- [x] Dedup / continuity policy (SQLite + Jaccard)
+- [x] Scheduled run + idempotent send (launchd plist + existing send logs)
+- [x] Wire Today UI to real latest Idea (`public/data/latest-idea.json`)
 
 ## Phase 3 — Product surface polish
 
 - [x] Public shell targeting `passive.xingai.app`
 - [ ] Live `launchStatus` when domain is up
 - [ ] Optional auth (new Google OAuth client)
+- [ ] Broader live web research / optional LLM polish (still fail-closed)
 
 ## PDF fixed outline
 

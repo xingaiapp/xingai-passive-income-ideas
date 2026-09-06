@@ -1,0 +1,27 @@
+version: 1
+operator:
+  name: Xing
+  age: 53
+  location: "Austin, Texas, USA"
+  locale: zh-CN
+  timezone: America/Chicago
+  background: "软件工程、.NET、云平台、AI 与工程管理"
+  goals: "财富自由与长期被动收入"
+  skills:
+    - .NET
+    - cloud
+    - AI
+    - eng-management
+    - B2B
+  constraints:
+    - 不接受赌博式或高杠杆方案
+    - 不接受难以核实的承诺
+    - 不接受需长期高强度全职投入才能启动的方案
+    - 适合 53 岁财富积累阶段：可兼职验证、可外包/自动化
+email:
+  to_env: PASSIVE_INCOME_REPORT_TO
+  dry_run_default: true
+research:
+  mode: live
+  continuity_days: 7
+  min_jaccard_new: 0.35

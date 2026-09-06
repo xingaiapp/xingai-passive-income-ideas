@@ -6,6 +6,19 @@ from typing import Literal
 
 EvidenceKind = Literal["fact", "inference", "recommendation"]
 
+UNVERIFIED = "未核实"
+
+
+def ensure_unverified_income_band(text: str) -> str:
+    """Fail-closed: income bands must not read as verified facts."""
+    t = (text or "").strip()
+    if not t:
+        return f"收入区间{UNVERIFIED}"
+    markers = (UNVERIFIED, "未做付费验证", "估计", "不预测")
+    if any(m in t for m in markers):
+        return t
+    return f"{t}（{UNVERIFIED}）"
+
 
 @dataclass(frozen=True)
 class OperatorProfile:
@@ -14,6 +27,10 @@ class OperatorProfile:
     background: str
     goals: str
     constraints: tuple[str, ...]
+    skills: tuple[str, ...] = ()
+    name: str = ""
+    locale: str = "zh-CN"
+    timezone: str = "America/Chicago"
 
 
 @dataclass(frozen=True)
