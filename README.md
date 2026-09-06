@@ -1,4 +1,4 @@
-**Version:** 0.1.6
+**Version:** 0.1.7
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -50,6 +50,10 @@ Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth clie
 - Local: `http://localhost:3000/api/auth/callback/google`
 
 ## Current version notes
+
+### 0.1.7
+
+- Default theme is light (system preference no longer auto-enables dark).
 
 ### 0.1.6
 

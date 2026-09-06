@@ -5,7 +5,7 @@ import { useEffect, useState, type ReactNode } from "react";
 
 export function AppThemeProvider({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
       <ThemeColorSync />
       {children}
     </ThemeProvider>
@@ -17,7 +17,7 @@ function ThemeColorSync() {
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
     if (!meta) return;
-    meta.setAttribute("content", resolvedTheme === "dark" ? "#141a14" : "#f6f8f5");
+    meta.setAttribute("content", resolvedTheme === "dark" ? "#1a1a2e" : "#efeaf5");
   }, [resolvedTheme]);
   return null;
 }
