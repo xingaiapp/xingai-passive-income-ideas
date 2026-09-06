@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **0.1.2** — web shell + offline worker MVP (mock PDF + Resend dry-run)  
+> Status: **0.1.3** — web shell + offline worker MVP (mock PDF + Resend dry-run)  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract

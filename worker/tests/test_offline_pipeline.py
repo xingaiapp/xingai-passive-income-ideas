@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from datetime import date
 
-from passive_income_zhibao.email_report import build_body, build_subject, send_report
-from passive_income_zhibao.mock_data import build_mock_snapshot
-from passive_income_zhibao.pdf_report import pdf_filename, render_pdf
-from passive_income_zhibao.qa import validate_pdf_bytes
+from passive_income_ideas.email_report import build_body, build_subject, send_report
+from passive_income_ideas.mock_data import build_mock_snapshot
+from passive_income_ideas.pdf_report import pdf_filename, render_pdf
+from passive_income_ideas.qa import validate_pdf_bytes
 
 
 def test_mock_snapshot_fields():

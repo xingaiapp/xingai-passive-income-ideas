@@ -1,4 +1,4 @@
-"""CLI: python -m passive_income_zhibao <command>"""
+"""CLI: python -m passive_income_ideas <command>"""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ def _parse_day(raw: str | None) -> date | None:
 
 def main(argv: list[str] | None = None) -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
-    parser = argparse.ArgumentParser(prog="passive_income_zhibao")
+    parser = argparse.ArgumentParser(prog="passive_income_ideas")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     p_gen = sub.add_parser("generate", help="Render mock PDF to worker/output/pdf/")

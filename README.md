@@ -1,9 +1,9 @@
-**Version:** 0.1.2
+**Version:** 0.1.3
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
 - **Product URL (target):** https://passive.xingai.app/
-- **Repository:** https://github.com/xingaiapp/xingai-passive-income-zhibao (private)
+- **Repository:** https://github.com/xingaiapp/xingai-passive-income-ideas (private)
 
 ## What this product does
 
@@ -35,9 +35,9 @@ cd worker
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 pytest
-python -m passive_income_zhibao generate
-python -m passive_income_zhibao run-daily          # dry-run email log
-# python -m passive_income_zhibao run-daily --live  # needs RESEND_API_KEY
+python -m passive_income_ideas generate
+python -m passive_income_ideas run-daily          # dry-run email log
+# python -m passive_income_ideas run-daily --live  # needs RESEND_API_KEY
 ```
 
 PDF lands in `worker/output/pdf/`. Fonts: optional `worker/assets/NotoSansSC-*.ttf` (TrueType; see `worker/assets/README.md`). macOS falls back to system CJK fonts.
@@ -50,6 +50,10 @@ Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth clie
 - Local: `http://localhost:3000/api/auth/callback/google`
 
 ## Current version notes
+
+### 0.1.3
+
+- Renamed repo/package to `xingai-passive-income-ideas` (Python module `passive_income_ideas`). Product slug/domain unchanged (`passive-income` / `passive.xingai.app`).
 
 ### 0.1.2
 

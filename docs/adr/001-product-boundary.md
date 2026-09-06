@@ -16,7 +16,7 @@ The new product needs a clear job: one daily **personal** passive-income / cash-
 
 ## Decision
 
-1. **Repo** `xingai-passive-income-zhibao` owns both:
+1. **Repo** `xingai-passive-income-ideas` (renamed from `xingai-passive-income-zhibao`) owns both:
    - Next.js public shell at `passive.xingai.app` (project-init baseline),
    - Python report worker under `worker/` (PDF + Resend), modeled on Invest `investment_zhibao`.
 2. **Not** a fork of Opportunity Radar or Founder Brief content pipelines.

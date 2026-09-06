@@ -40,7 +40,7 @@ def build_body(snapshot: IdeaSnapshot) -> str:
 
 
 def idempotency_key(report_date: str, recipient: str) -> str:
-    return f"passive-income-zhibao:{report_date}:{recipient.strip().lower()}"
+    return f"passive-income-ideas:{report_date}:{recipient.strip().lower()}"
 
 
 def already_sent(key: str) -> bool:
