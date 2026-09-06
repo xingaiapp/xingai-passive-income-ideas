@@ -1,49 +1,59 @@
 # XingAI Passive Income Idea 智报
 
-**Version:** 0.1.0
+**Version:** 0.1.1
 
-Daily **one-Idea** passive-income research report for a personal operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage). Not a public `*.xingai.app` product UI yet — report worker + email/PDF delivery first.
+Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
-**Repository:** https://github.com/xingaiapp/xingai-passive-income-zhibao (private)
+- **Product URL (target):** https://passive.xingai.app/
+- **Repository:** https://github.com/xingaiapp/xingai-passive-income-zhibao (private)
 
-## What this will do
+## What this product does
 
-- Research markets, AI product opportunities, digital-asset small businesses, automatable services, subscriptions, cash-flow investments, and other **legal** options.
-- Pick **exactly one** primary Idea for the day (no laundry lists). Prefer continuity: if yesterday’s Idea is still best, report validation progress / market changes / next steps instead of forcing a new topic.
-- Deliver like 《XingAI 每日投资智报》: short Gmail/Resend **Summary** body (简体中文, black text) + full **A4 PDF** attachment under the shared XingAI 智报 visual template.
-- Separate **facts / inference / recommendations**; cite clickable sources; mark unknowns as `未核实`; never fabricate.
-- Strictly separate **investment returns** vs **business revenue**. No gambling-style, leveraged, unverifiable, or full-time grind Ideas that do not fit a 53-year-old wealth-accumulation stage.
+- Picks **exactly one** Idea per day (continuity over novelty).
+- Delivers like 《XingAI 每日投资智报》: short email **Summary** (简体中文) + full **A4 PDF**.
+- Separates facts / inference / recommendations; cites sources; marks `未核实`.
+- Separates **investment returns** vs **business revenue**. No gambling-style or leveraged schemes.
 
-## Non-goals (v0)
+## Stack
 
-- Public marketing site / mobile chrome product surface (register on `xingai-dot-app` only when a UI ships).
-- Auto-executing trades or opening bank/broker accounts.
-- Guaranteeing income.
+| Layer | Path |
+|-------|------|
+| Public Next.js shell | repo root (`src/app`) — chrome, en/zh/ko, light/dark, legal, SEO/AEO |
+| Report worker (scaffold) | `worker/` — PDF + Resend pipeline **not implemented yet** |
 
-## Delivery contract (target)
+## Local development (web)
 
-| Item | Format |
-|------|--------|
-| To | `xing@xingai.app` |
-| Subject | `XingAI 每日被动收入 Idea 智报｜YYYY-MM-DD｜今日Idea：简短名称` |
-| Body | Summary only: 今日结论 / 为什么适合我 / 现实收入区间 / 今天做什么 / 今天不要做什么 / 最大风险 / PDF 说明 |
-| Attachment | `XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf` (`application/pdf`) |
+```bash
+npm install
+npm run dev
+```
 
-PDF sections, fonts (Noto Sans SC Regular/Bold), colors (#000000 text, #FFF4CC / #E07000 accents), and render-QA gates: see [`docs/PLAN.md`](docs/PLAN.md).
+Open http://localhost:3000. Set `NEXT_PUBLIC_SITE_URL=https://passive.xingai.app` for production metadata.
 
-## Relationship to other XingAI repos
+## Environment
 
-- Delivery/PDF craft reference: `xingai-invest-ai` → `stock-ai-worker/market_cache_worker/investment_zhibao/` (ADR-040/042).
-- Portfolio opportunity emails (different job): `xingai-opportunity-radar`.
-- Founder brief (different job): `xingai-founder`.
+See [`.env.example`](./.env.example). Never commit secrets.
 
-## Local status
+Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth client before login ships — do not reuse another product’s client.
 
-**0.1.0** — private repo scaffold + plan/disclaimer only. Generator / PDF / send pipeline **not implemented yet**.
+- Prod callback: `https://passive.xingai.app/api/auth/callback/google`
+- Local: `http://localhost:3000/api/auth/callback/google`
+
+## Current version notes
+
+### 0.1.1
+
+- **project-init baseline:** Next.js mobile chrome (top + drawer + bottom tabs + desktop side nav), en/zh/ko, light/dark, legal EN/zh/ko, robots/sitemap/llms.txt, hero light/dark, mock Today Idea board.
+- Registered on xingai-dot-app as **Soon** (`passive-income` → `passive.xingai.app`).
+- Python worker remains under `worker/` (CLI stub).
+
+### 0.1.0
+
+- Private repo scaffold + PLAN + DISCLAIMER only.
 
 ## Disclaimer
 
-See [`DISCLAIMER.md`](DISCLAIMER.md).
+See [`DISCLAIMER.md`](./DISCLAIMER.md). Informational only — not financial advice.
 
 ## License
 

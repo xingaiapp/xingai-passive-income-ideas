@@ -1,33 +1,37 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **repo bootstrap only** (2026-09-06). No generator yet.
+> Status: **project-init web shell shipped (0.1.1)** · report worker still pending  
+> Reviewed: 2026-09-06
 
 ## Phase 0 — Contract
 
 - [x] Private GitHub repo + README / DISCLAIMER / PLAN
-- [ ] ADR-001: product boundary (personal daily Idea report vs Invest 智报 vs Opportunity Radar)
+- [x] ADR-001: product boundary (personal daily Idea report vs Invest 智报 vs Opportunity Radar)
+- [x] project-init public shell (chrome, i18n, theme, legal, SEO/AEO, dot-app Soon)
 - [ ] Operator profile config (age/locale/skills/constraints) as versioned YAML
 - [ ] Idea memory store (SQLite/Turso) for anti-repeat + “still best → progress update”
 
-## Phase 1 — Offline MVP
+## Phase 1 — Offline MVP (worker)
 
-- [ ] Pydantic snapshot models (Idea, fit scores, capital, hours, revenue band, sources, risks)
+- [ ] Pydantic snapshot models
 - [ ] Mock-first research snapshot + fixtures
-- [ ] ReportLab PDF renderer matching XingAI 智报 visual template (A4, Noto Sans SC, black text, yellow/orange accents)
-- [ ] PDF render-to-image QA gate (no Thin/Light fonts; all text #000000; in-bounds)
-- [ ] Email Summary builder (简体中文) + Resend send (dry-run default)
+- [ ] ReportLab PDF (XingAI 智报 visual template)
+- [ ] PDF render-to-image QA gate
+- [ ] Email Summary (简体中文) + Resend dry-run
 - [ ] CLI: `generate | validate-pdf | send | run-daily`
 
 ## Phase 2 — Live research
 
-- [ ] Source adapters with citations + `未核实` fail-closed
-- [ ] Dedup / continuity policy against Idea memory
-- [ ] Scheduled run (GitHub Actions or worker cron)
-- [ ] Idempotent send per calendar day
+- [ ] Source adapters + `未核实` fail-closed
+- [ ] Dedup / continuity policy
+- [ ] Scheduled run + idempotent send
+- [ ] Wire Today UI to real latest Idea
 
-## Phase 3 — Product surface (optional)
+## Phase 3 — Product surface polish
 
-- [ ] Public or gated UI only if needed; then full project-init (chrome, en/zh/ko, legal, SEO/AEO, `xingai-dot-app`)
+- [x] Public shell targeting `passive.xingai.app`
+- [ ] Live `launchStatus` when domain is up
+- [ ] Optional auth (new Google OAuth client)
 
 ## PDF fixed outline
 
@@ -47,4 +51,14 @@
 
 ## Hard visual rules
 
-Shared XingAI 日报 PDF template: A4 white; all text `#000000`; Noto Sans SC Regular/Bold only; cover title ≥22pt; H1 ≥17pt; body ≥10.5pt; table ≥8.5pt (footer/sources ≥8.2pt min); exec summary `#FFF4CC` fill + `#E07000` border; wrap-safe table cells; QA render before attach.
+A4 white; text `#000000`; Noto Sans SC Regular/Bold; cover ≥22pt; H1 ≥17pt; body ≥10.5pt; table ≥8.5pt (min 8.2pt); exec `#FFF4CC` + `#E07000`; wrap-safe cells; QA before attach.
+
+## project-init checklist
+
+- [x] Mobile ~375px; top + drawer + bottom tabs; desktop side menu open/collapse
+- [x] Icon + hero light/dark + OG
+- [x] en / zh / ko; light/dark; legal EN+zh+ko
+- [x] metadata, sitemap, robots, llms.txt, FAQ + JSON-LD
+- [x] xingai-dot-app Soon registration
+- [ ] Deploy + DNS `passive.xingai.app`
+- [ ] Google OAuth (deferred)
