@@ -66,12 +66,20 @@ def _progress_overlay(item: dict[str, Any], times: int) -> tuple[str, str]:
     return "progress", do_today
 
 
-def build_live_snapshot(report_day: date | None = None) -> IdeaSnapshot:
+def build_live_snapshot(
+    report_day: date | None = None,
+    *,
+    web_fetch: bool | None = None,
+    llm_polish: bool | None = None,
+    force_llm: bool = False,
+) -> IdeaSnapshot:
     """Pick one Idea from catalog using profile + SQLite anti-repeat. No invented facts."""
     day = report_day or date.today()
     cfg = load_app_config()
     profile = cfg.profile
     settings = cfg.research
+    do_web = settings.web_fetch if web_fetch is None else web_fetch
+    do_llm = settings.llm_polish if llm_polish is None else llm_polish
     catalog = load_idea_catalog()
     conn = connect()
     try:
@@ -169,6 +177,16 @@ def build_live_snapshot(report_day: date | None = None) -> IdeaSnapshot:
             sources=sources,
             is_mock=False,
         )
+
+        if do_web:
+            from .web_research import enrich_snapshot_web
+
+            snap = enrich_snapshot_web(snap)
+        if do_llm:
+            from .llm_polish import maybe_polish_snapshot
+
+            snap = maybe_polish_snapshot(snap, force_llm=force_llm, enabled=True)
+
         upsert_pick(conn, snap)
         return snap
     finally:

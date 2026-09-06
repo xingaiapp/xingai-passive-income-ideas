@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **0.2.0** — live catalog research + memory + Today UI wired  
+> Status: **0.2.1** — live catalog + web probe + optional LLM polish  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract
@@ -32,7 +32,7 @@
 - [x] Public shell targeting `passive.xingai.app`
 - [ ] Live `launchStatus` when domain is up
 - [ ] Optional auth (new Google OAuth client)
-- [ ] Broader live web research / optional LLM polish (still fail-closed)
+- [x] Broader live web research / optional LLM polish (still fail-closed)
 
 ## PDF fixed outline
 

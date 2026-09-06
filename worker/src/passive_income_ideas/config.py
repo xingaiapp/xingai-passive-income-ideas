@@ -40,6 +40,8 @@ class ResearchSettings:
     mode: str  # live | mock
     continuity_days: int
     min_jaccard_new: float
+    web_fetch: bool
+    llm_polish: bool
 
 
 @dataclass(frozen=True)
@@ -87,6 +89,8 @@ def load_app_config(path: Path | None = None) -> AppConfig:
         mode=str(research.get("mode") or "live").strip().lower(),
         continuity_days=int(research.get("continuity_days") or 7),
         min_jaccard_new=float(research.get("min_jaccard_new") or 0.35),
+        web_fetch=bool(research.get("web_fetch", True)),
+        llm_polish=bool(research.get("llm_polish", True)),
     )
     return AppConfig(profile=profile, research=settings, raw=raw)
 

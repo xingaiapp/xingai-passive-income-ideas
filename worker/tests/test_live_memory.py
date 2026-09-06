@@ -59,7 +59,7 @@ def test_unverified_income_band():
 
 def test_live_snapshot_not_mock(tmp_path: Path, monkeypatch):
     monkeypatch.setenv("PASSIVE_INCOME_DATA_DIR", str(tmp_path))
-    snap = build_live_snapshot(date(2026, 9, 6))
+    snap = build_live_snapshot(date(2026, 9, 6), web_fetch=False, llm_polish=False)
     assert snap.is_mock is False
     assert snap.idea_id
     assert snap.idea_name

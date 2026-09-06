@@ -25,3 +25,5 @@ research:
   mode: live
   continuity_days: 7
   min_jaccard_new: 0.35
+  web_fetch: true
+  llm_polish: true

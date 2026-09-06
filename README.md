@@ -1,4 +1,4 @@
-**Version:** 0.2.0
+**Version:** 0.2.1
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -17,7 +17,7 @@ Daily **one-Idea** passive-income research for a defined operator profile (softw
 | Layer | Path |
 |-------|------|
 | Public Next.js shell | repo root — Today reads `public/data/latest-idea.json` |
-| Report worker | `worker/` — live catalog pick + SQLite memory → PDF → Resend |
+| Report worker | `worker/` — catalog pick + web probe + optional LLM polish → PDF → Resend |
 
 ## Local development (web)
 
@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. Set `NEXT_PUBLIC_SITE_URL=https://passive.xingai.app` for production metadata.
+Open http://localhost:3000.
 
 ## Report worker (live)
 
@@ -35,68 +35,34 @@ cd worker
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 pytest
-python -m passive_income_ideas generate              # live mode (default)
-python -m passive_income_ideas generate --mode mock  # offline fixture
-python -m passive_income_ideas run-daily             # dry-run email
-# python -m passive_income_ideas run-daily --live    # needs RESEND_API_KEY + ENABLED
+python -m passive_income_ideas generate                 # live + web probe + LLM if key set
+python -m passive_income_ideas generate --no-web --no-llm
+python -m passive_income_ideas generate --force-llm     # fail if no OpenAI key
+python -m passive_income_ideas run-daily                # dry-run email
+# python -m passive_income_ideas run-daily --live
 ```
 
-Config:
+Config: `worker/config/operator_profile.yaml` (`web_fetch`, `llm_polish`), `idea_catalog.yaml`, SQLite under `worker/data/`.
 
-- `worker/config/operator_profile.yaml` — profile + `research.mode`
-- `worker/config/idea_catalog.yaml` — curated Idea pool (fail-closed sources)
-- `worker/data/idea_memory.sqlite` — anti-repeat / continuity (gitignored)
+**Web research:** probes catalog source URLs (reachability + page title). Never invents market facts from HTML. Failures → `verified=false` + `未核实`.
 
-Outputs: PDF under `worker/output/pdf/`, JSON under `worker/output/json/`, UI copy at `public/data/latest-idea.json`.
+**LLM polish (optional):** `OPENAI_API_KEY` or `PASSIVE_INCOME_OPENAI_API_KEY` polishes Chinese copy only; strips new URLs and new money tokens. No key → keep catalog copy.
 
-### Schedule (macOS)
-
-1. Put Resend secrets in your shell env or a local (untracked) env file loaded by launchd.
-2. Edit paths in `worker/scripts/com.xingai.passive-income-ideas.plist` if needed.
-3. `chmod +x worker/scripts/run-daily.sh`
-4. `launchctl load worker/scripts/com.xingai.passive-income-ideas.plist`
-
-Default calendar: 07:10 local. Test with dry-run first (remove `--live` from the plist).
-
-Env: see [`.env.example`](./.env.example). Default recipient `PASSIVE_INCOME_REPORT_TO=xing@xingai.app`. Never commit secrets.
+See [`.env.example`](./.env.example). Never commit secrets.
 
 ## Current version notes
 
+### 0.2.1
+
+- Web source probing + optional OpenAI polish (fail-closed; `--no-web` / `--no-llm` / `--force-llm`).
+
 ### 0.2.0
 
-- **Live research MVP:** operator YAML + idea catalog, SQLite anti-repeat/continuity, fail-closed `未核实`, `generate` writes `latest-idea.json`, Today UI renders live Idea, `run-daily` + launchd script for scheduled Resend.
+- Live research MVP: operator YAML + catalog, SQLite memory, Today UI wire-up, launchd script.
 
-### 0.1.7
+### 0.1.7–0.1.0
 
-- Default theme is light (system preference no longer auto-enables dark).
-
-### 0.1.6
-
-- Fix CTA button label vertical centering (`inline-flex` + center).
-
-### 0.1.5
-
-- Visual redesign (“Ledger dusk”): lilac paper + ink navy + apricot; Outfit + Fraunces.
-
-### 0.1.4
-
-- project-init visual hard gate: heroes, icons, motion.
-
-### 0.1.3
-
-- Renamed repo/package to `xingai-passive-income-ideas`.
-
-### 0.1.2
-
-- Worker Phase 1 mock PDF + Resend dry-run.
-
-### 0.1.1
-
-- project-init web shell + dot-app Soon.
-
-### 0.1.0
-
-- Private repo scaffold.
+- Light default theme, button centering, ledger-dusk redesign, project-init shell, rename, mock worker, scaffold.
 
 ## Disclaimer
 

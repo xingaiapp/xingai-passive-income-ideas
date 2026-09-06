@@ -1,6 +1,6 @@
 [project]
 name = "xingai-passive-income-ideas"
-version = "0.2.0"
+version = "0.2.1"
 description = "XingAI Daily Passive Income Idea 智报 (report worker)"
 requires-python = ">=3.11"
 dependencies = [

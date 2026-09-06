@@ -22,12 +22,20 @@ def generate(
     report_day: date | None = None,
     *,
     mode: str | None = None,
+    web_fetch: bool | None = None,
+    llm_polish: bool | None = None,
+    force_llm: bool = False,
 ) -> tuple[object, Path]:
     resolved = resolve_mode(mode)
     if resolved == "mock":
         snapshot = build_mock_snapshot(report_day)
     else:
-        snapshot = build_live_snapshot(report_day)
+        snapshot = build_live_snapshot(
+            report_day,
+            web_fetch=web_fetch,
+            llm_polish=llm_polish,
+            force_llm=force_llm,
+        )
 
     pdf_bytes = render_pdf(snapshot)
     errs = validate_pdf_bytes(pdf_bytes)
@@ -49,9 +57,18 @@ def run_daily(
     report_day: date | None = None,
     force: bool = False,
     mode: str | None = None,
+    web_fetch: bool | None = None,
+    llm_polish: bool | None = None,
+    force_llm: bool = False,
 ) -> int:
     try:
-        snapshot, path = generate(report_day, mode=mode)
+        snapshot, path = generate(
+            report_day,
+            mode=mode,
+            web_fetch=web_fetch,
+            llm_polish=llm_polish,
+            force_llm=force_llm,
+        )
     except Exception as exc:  # noqa: BLE001
         log.error("generate failed: %s", exc)
         return 3
