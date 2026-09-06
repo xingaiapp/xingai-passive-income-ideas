@@ -59,10 +59,15 @@ def _evidence(item: dict[str, Any]) -> tuple[EvidenceItem, ...]:
 
 
 def _progress_overlay(item: dict[str, Any], times: int) -> tuple[str, str]:
-    """Slightly advance do_today when the same Idea continues."""
-    base_do = str(item.get("do_today") or "")
-    note = f"连续性更新（第 {times + 1} 次选中）：在昨日动作之上推进下一步验证，不换题。"
-    do_today = f"{note} {base_do}"
+    """Advance do_today along the Idea's day7 plan when the same Idea continues."""
+    day7 = [str(x) for x in (item.get("day7_plan") or ()) if str(x).strip()]
+    step_idx = min(max(times, 0), max(len(day7) - 1, 0)) if day7 else 0
+    step = day7[step_idx] if day7 else str(item.get("do_today") or "")
+    note = (
+        f"连续性更新（第 {times + 1} 次选中，仍为本主 Idea）："
+        f"按 7 天计划推进到步骤 {step_idx + 1}/{max(len(day7), 1)}。"
+    )
+    do_today = f"{note} 今天 30 分钟：{step}"
     return "progress", do_today
 
 

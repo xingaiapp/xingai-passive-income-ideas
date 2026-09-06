@@ -17,6 +17,17 @@ export type Messages = {
     whyFitBody: string;
     incomeBand: string;
     incomeBandBody: string;
+    capital: string;
+    timeWeek: string;
+    firstRevenue: string;
+    fitScore: string;
+    passiveScore: string;
+    evidence: string;
+    evidenceKinds: { fact: string; inference: string; recommendation: string };
+    day7: string;
+    sources: string;
+    verified: string;
+    unverified: string;
     doToday: string;
     doTodayBody: string;
     dontToday: string;
@@ -29,11 +40,13 @@ export type Messages = {
     liveProgressBadge: string;
     ctaHow: string;
     ctaArchive: string;
+    ctaPdf: string;
   };
   archive: {
     title: string;
     subtitle: string;
     empty: string;
+    openJson: string;
   };
   how: {
     title: string;
@@ -64,7 +77,7 @@ export const messages: Record<Locale, Messages> = {
     today: {
       title: "Today’s only Idea",
       titleAccent: "worth acting on.",
-      subtitle: "Research summary mock. Full PDF + email delivery ships with the report worker.",
+      subtitle: "Full report fields load from today’s research snapshot when available.",
       ideaLabel: "Primary Idea",
       ideaName: "Niche AI ops checklist product (mock)",
       whyFit: "Why it fits you",
@@ -72,23 +85,36 @@ export const messages: Record<Locale, Messages> = {
         "Uses software/.NET/cloud/AI leadership skills; can start part-time from Austin without a new full-time job (mock).",
       incomeBand: "Realistic income band",
       incomeBandBody: "Business revenue estimate only — not investment yield. Mock band: $0–2k/mo in 90 days if validated.",
+      capital: "Startup capital",
+      timeWeek: "Time per week",
+      firstRevenue: "First revenue ETA",
+      fitScore: "Fit",
+      passiveScore: "Passive",
+      evidence: "Market evidence",
+      evidenceKinds: { fact: "Fact", inference: "Inference", recommendation: "Advice" },
+      day7: "7-day MVP plan",
+      sources: "Sources (probed)",
+      verified: "verified page",
+      unverified: "未核实",
       doToday: "Do today (30 min)",
       doTodayBody: "Interview 3 peers about a painful ops checklist they still do by hand (mock).",
       dontToday: "Don’t do today",
       dontTodayBody: "Don’t buy ads, form an LLC, or build a full SaaS yet (mock).",
       risk: "Biggest risk",
       riskBody: "Demand may be polite interest only — stop if 10 talks yield zero paid intent (mock).",
-      pdfNote: "Detailed steps will arrive as PDF: XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf",
+      pdfNote: "Full A4 report PDF",
       mockBadge: "Mock Idea — offline fixture",
       liveBadge: "Live Idea — from today’s research",
       liveProgressBadge: "Live Idea — progress update",
       ctaHow: "How delivery works",
       ctaArchive: "Past Ideas",
+      ctaPdf: "Open PDF",
     },
     archive: {
       title: "Idea archive",
       subtitle: "Continuity memory: prefer progress on yesterday’s Idea when it still wins.",
       empty: "No archived Ideas yet. Daily runs will land here after the worker ships.",
+      openJson: "Open JSON",
     },
     how: {
       title: "How delivery works",
@@ -155,30 +181,43 @@ export const messages: Record<Locale, Messages> = {
     today: {
       title: "今日唯一 Idea",
       titleAccent: "值得动手。",
-      subtitle: "当前为模拟摘要。完整 PDF + 邮件将由报告 worker 送达。",
+      subtitle: "有今日研究快照时，页面会加载完整字段。",
       ideaLabel: "主 Idea",
       ideaName: "垂直 AI 运维清单产品（模拟）",
       whyFit: "为什么适合你",
       whyFitBody: "复用软件/.NET/云/AI 管理背景；可在 Austin 兼职启动，不必立刻全职（模拟）。",
       incomeBand: "现实收入区间",
       incomeBandBody: "仅商业收入估计——不是投资收益率。模拟：验证后 90 天内约 $0–2k/月。",
+      capital: "启动资金",
+      timeWeek: "每周投入",
+      firstRevenue: "首笔收入预估",
+      fitScore: "适合度",
+      passiveScore: "被动度",
+      evidence: "市场与需求证据",
+      evidenceKinds: { fact: "事实", inference: "推断", recommendation: "建议" },
+      day7: "7 天 MVP 计划",
+      sources: "来源（已探测）",
+      verified: "页面已核实可达",
+      unverified: "未核实",
       doToday: "今天做（30 分钟）",
       doTodayBody: "找 3 位同行，问他们是否仍手工做某类运维清单（模拟）。",
       dontToday: "今天不要做",
       dontTodayBody: "不要买广告、不要急着开公司、不要先做完整 SaaS（模拟）。",
       risk: "最大风险",
       riskBody: "热情不等于付费意愿——若 10 次访谈仍无付费意向则停止（模拟）。",
-      pdfNote: "详细步骤将以 PDF 附件送达：XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf",
+      pdfNote: "完整 A4 PDF 报告",
       mockBadge: "模拟 Idea — 离线 fixture",
       liveBadge: "今日研究 · 实时 Idea",
       liveProgressBadge: "今日研究 · 连续性推进",
       ctaHow: "如何送达",
       ctaArchive: "往日 Idea",
+      ctaPdf: "打开 PDF",
     },
     archive: {
       title: "Idea 归档",
       subtitle: "连续性记忆：若昨日 Idea 仍最优，报告进度而非硬换题。",
       empty: "暂无归档。Worker 上线后，每日运行会落在这里。",
+      openJson: "打开 JSON",
     },
     how: {
       title: "如何送达",
@@ -241,30 +280,43 @@ export const messages: Record<Locale, Messages> = {
     today: {
       title: "오늘의 단 하나 Idea",
       titleAccent: "실행할 가치.",
-      subtitle: "지금은 목 요약입니다. 전체 PDF + 메일은 리포트 worker가 보냅니다.",
+      subtitle: "오늘 리서치 스냅샷이 있으면 전체 필드가 표시됩니다.",
       ideaLabel: "메인 Idea",
       ideaName: "니치 AI 운영 체크리스트 제품 (목)",
       whyFit: "왜 맞는지",
       whyFitBody: "소프트웨어/.NET/클라우드/AI 리더십을 쓰며 Austin에서 파트타임으로 시작 가능 (목).",
       incomeBand: "현실 수입 구간",
       incomeBandBody: "사업 매출 추정만 — 투자 수익률 아님. 목: 검증 후 90일 $0–2k/월.",
+      capital: "시작 자본",
+      timeWeek: "주당 시간",
+      firstRevenue: "첫 매출 ETA",
+      fitScore: "적합도",
+      passiveScore: "수동도",
+      evidence: "시장 증거",
+      evidenceKinds: { fact: "사실", inference: "추론", recommendation: "제안" },
+      day7: "7일 MVP 계획",
+      sources: "출처 (탐침됨)",
+      verified: "페이지 확인됨",
+      unverified: "未核实",
       doToday: "오늘 할 일 (30분)",
       doTodayBody: "동료 3명에게 아직 수작업인 운영 체크리스트가 있는지 인터뷰 (목).",
       dontToday: "오늘 하지 말 것",
       dontTodayBody: "광고 구매·법인 설립·풀 SaaS 구축은 아직 (목).",
       risk: "최대 리스크",
       riskBody: "관심만 있고 지불 의사가 없을 수 있음 — 10회 인터뷰 후 유료 의도 없으면 중단 (목).",
-      pdfNote: "상세 단계는 PDF로: XingAI_Daily_Passive_Income_Idea_Report_YYYY-MM-DD.pdf",
+      pdfNote: "전체 A4 PDF 리포트",
       mockBadge: "목 Idea — 오프라인 fixture",
       liveBadge: "오늘 리서치 · 라이브 Idea",
       liveProgressBadge: "오늘 리서치 · 연속 업데이트",
       ctaHow: "전달 방식",
       ctaArchive: "지난 Idea",
+      ctaPdf: "PDF 열기",
     },
     archive: {
       title: "Idea 보관",
       subtitle: "연속성: 어제 Idea가 여전히 최선이면 주제 교체 대신 진행 상황을 보고합니다.",
       empty: "보관된 Idea 없음. Worker 이후 일일 실행이 여기에 쌓입니다.",
+      openJson: "JSON 열기",
     },
     how: {
       title: "전달 방식",

@@ -47,6 +47,12 @@ ideas:
       - kind: fact
         text: 美国自雇者需了解 self-employment tax 义务（IRS 页面存在）。
         source_ids: [s_irs]
+      - kind: fact
+        text: 美国小企业管理局（SBA）提供创办与经营小企业的公开指引入口（页面存在；非对本 Idea 需求量的统计）。
+        source_ids: [s_sba]
+      - kind: fact
+        text: Microsoft Azure Well-Architected 提供运维可靠性检查框架（公开文档存在；说明检查清单类内容有成熟参照物，不证明付费意愿）。
+        source_ids: [s_azure_waf]
       - kind: recommendation
         text: 先卖清单与提醒，再考虑软件化；用预售验证价格。
         source_ids: []
@@ -57,6 +63,18 @@ ideas:
         as_of: "2026-01-15"
         verified: true
         note: 税务提醒页面存在；非对本 Idea 收入的预测
+      s_sba:
+        title: SBA — Start your business
+        url: https://www.sba.gov/business-guide/launch-your-business
+        as_of: "2026-09-06"
+        verified: true
+        note: 创办小企业公开指引入口；非市场需求量证明
+      s_azure_waf:
+        title: Azure Well-Architected — Reliability
+        url: https://learn.microsoft.com/en-us/azure/well-architected/reliability/
+        as_of: "2026-09-06"
+        verified: true
+        note: 公开运维检查框架；竞争/参照上下文，非收入预测
       s_bls:
         title: BLS Occupational Employment — software developers (context only)
         url: https://www.bls.gov/oes/

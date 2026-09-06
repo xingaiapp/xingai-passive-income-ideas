@@ -190,6 +190,7 @@ def upsert_pick(conn: sqlite3.Connection, snapshot: IdeaSnapshot) -> None:
 
 
 def snapshot_to_public_dict(snapshot: IdeaSnapshot) -> dict:
+    pdf_name = f"XingAI_Daily_Passive_Income_Idea_Report_{snapshot.report_date}.pdf"
     return {
         "report_date": snapshot.report_date,
         "generated_at": snapshot.generated_at,
@@ -202,11 +203,29 @@ def snapshot_to_public_dict(snapshot: IdeaSnapshot) -> dict:
         "why_fit": snapshot.why_fit,
         "income_kind": snapshot.income_kind,
         "income_band": snapshot.income_band,
+        "startup_capital": snapshot.startup_capital,
+        "time_per_week": snapshot.time_per_week,
+        "first_revenue_eta": snapshot.first_revenue_eta,
+        "scalability": snapshot.scalability,
         "do_today": snapshot.do_today,
         "dont_today": snapshot.dont_today,
         "biggest_risk": snapshot.biggest_risk,
+        "stop_rules": list(snapshot.stop_rules),
+        "day7_plan": list(snapshot.day7_plan),
+        "day30_goals": list(snapshot.day30_goals),
+        "business_model": snapshot.business_model,
+        "competition": snapshot.competition,
+        "market_evidence": [
+            {
+                "kind": ev.kind,
+                "text": ev.text,
+                "source_ids": list(ev.source_ids),
+            }
+            for ev in snapshot.market_evidence
+        ],
         "is_mock": snapshot.is_mock,
         "disclaimer": snapshot.disclaimer,
+        "pdf_url": f"/reports/{pdf_name}",
         "sources": {
             sid: {
                 "title": s.title,

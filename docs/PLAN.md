@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **0.2.2** — live at passive.xingai.app  
+> Status: **0.2.3** — live at passive.xingai.app  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract
@@ -26,6 +26,7 @@
 - [x] Dedup / continuity policy (SQLite + Jaccard)
 - [x] Scheduled run + idempotent send (launchd plist + existing send logs)
 - [x] Wire Today UI to real latest Idea (`public/data/latest-idea.json`)
+- [x] Publish full snapshot fields + sources/evidence/day7 + public PDF + archive index
 
 ## Phase 3 — Product surface polish
 

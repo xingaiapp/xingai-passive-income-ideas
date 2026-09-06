@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-09-06T20:00:37Z",
+  "items": [
+    {
+      "report_date": "2026-09-06",
+      "idea_id": "ops-checklist-sub",
+      "idea_name": "垂直行业 AI 运维检查清单（订阅制）",
+      "one_liner": "把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
+      "continuity": "new",
+      "income_kind": "business_revenue",
+      "is_mock": false,
+      "json_url": "/data/ideas/2026-09-06.json",
+      "pdf_url": "/reports/XingAI_Daily_Passive_Income_Idea_Report_2026-09-06.pdf"
+    }
+  ]
+}

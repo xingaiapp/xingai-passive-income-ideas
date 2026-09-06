@@ -45,7 +45,7 @@ def generate(
     out.mkdir(parents=True, exist_ok=True)
     path = out / pdf_filename(snapshot)
     path.write_bytes(pdf_bytes)
-    latest, public_latest = write_latest(snapshot)
+    latest, public_latest = write_latest(snapshot, pdf_path=path)
     log.info("wrote %s (%s bytes) mode=%s", path, len(pdf_bytes), resolved)
     log.info("latest json %s ; ui %s", latest, public_latest)
     return snapshot, path

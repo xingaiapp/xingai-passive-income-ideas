@@ -1,8 +1,8 @@
-**Version:** 0.2.2
+**Version:** 0.2.3
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
-- **Product URL (target):** https://passive.xingai.app/
+- **Product URL:** https://passive.xingai.app/
 - **Repository:** https://github.com/xingaiapp/xingai-passive-income-ideas (private)
 
 ## What this product does
@@ -16,7 +16,7 @@ Daily **one-Idea** passive-income research for a defined operator profile (softw
 
 | Layer | Path |
 |-------|------|
-| Public Next.js shell | repo root — Today reads `public/data/latest-idea.json` |
+| Public Next.js shell | repo root — Today/Archive read `public/data/*.json` + PDF under `public/reports/` |
 | Report worker | `worker/` — catalog pick + web probe + optional LLM polish → PDF → Resend |
 
 ## Local development (web)
@@ -46,11 +46,18 @@ Config: `worker/config/operator_profile.yaml` (`web_fetch`, `llm_polish`), `idea
 
 **Web research:** probes catalog source URLs (reachability + page title). Never invents market facts from HTML. Failures → `verified=false` + `未核实`.
 
+**Published web artifacts:** each generate writes `public/data/latest-idea.json`, dated `public/data/ideas/YYYY-MM-DD.json`, `public/data/archive-index.json`, and copies the PDF to `public/reports/`.
+
 **LLM polish (optional):** `OPENAI_API_KEY` or `PASSIVE_INCOME_OPENAI_API_KEY` polishes Chinese copy only; strips new URLs and new money tokens. No key → keep catalog copy.
 
 See [`.env.example`](./.env.example). Never commit secrets.
 
 ## Current version notes
+
+### 0.2.3
+
+- Today page shows full live fields (scores, capital, evidence, day-7, clickable sources).
+- Archive index + public PDF publish path for real on-site data.
 
 ### 0.2.2
 

@@ -10,6 +10,7 @@ venv/
 !.env.example
 *.pdf
 !docs/fixtures/**/*.pdf
+!public/reports/*.pdf
 .DS_Store
 .idea/
 .vscode/
