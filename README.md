@@ -1,4 +1,4 @@
-**Version:** 0.2.1
+**Version:** 0.2.2
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -51,6 +51,10 @@ Config: `worker/config/operator_profile.yaml` (`web_fetch`, `llm_polish`), `idea
 See [`.env.example`](./.env.example). Never commit secrets.
 
 ## Current version notes
+
+### 0.2.2
+
+- Confirmed deploy: `passive.xingai.app` live; PLAN/dot-app launch status updated.
 
 ### 0.2.1
 

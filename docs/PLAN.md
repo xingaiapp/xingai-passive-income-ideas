@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **0.2.1** — live catalog + web probe + optional LLM polish  
+> Status: **0.2.2** — live at passive.xingai.app  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract
@@ -30,7 +30,7 @@
 ## Phase 3 — Product surface polish
 
 - [x] Public shell targeting `passive.xingai.app`
-- [ ] Live `launchStatus` when domain is up
+- [x] Live `launchStatus` when domain is up
 - [ ] Optional auth (new Google OAuth client)
 - [x] Broader live web research / optional LLM polish (still fail-closed)
 
@@ -61,5 +61,5 @@ A4 white; text `#000000`; Noto Sans SC Regular/Bold; cover ≥22pt; H1 ≥17pt; 
 - [x] en / zh / ko; light/dark; legal EN+zh+ko
 - [x] metadata, sitemap, robots, llms.txt, FAQ + JSON-LD
 - [x] xingai-dot-app Soon registration
-- [ ] Deploy + DNS `passive.xingai.app`
+- [x] Deploy + DNS `passive.xingai.app`
 - [ ] Google OAuth (deferred)
