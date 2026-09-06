@@ -1,35 +1,44 @@
 @import "tailwindcss";
 
+/* Visual system: "Ledger dusk" — cool lilac paper + ink navy + apricot.
+   Not default XingAI green; not B&W; not cream/terracotta. */
+
 :root {
-  --background: oklch(0.985 0.006 145);
-  --foreground: oklch(0.22 0.025 150);
-  --card: oklch(0.995 0.004 145);
-  --muted: oklch(0.46 0.03 145);
-  --border: oklch(0.9 0.02 145);
-  --primary: oklch(0.48 0.13 145);
-  --primary-fg: oklch(0.99 0.01 145);
-  --soft: oklch(0.95 0.025 145);
+  --background: oklch(0.955 0.02 275);
+  --foreground: oklch(0.27 0.05 265);
+  --card: oklch(0.985 0.012 275);
+  --muted: oklch(0.48 0.035 265);
+  --border: oklch(0.86 0.025 275);
+  --primary: oklch(0.58 0.145 48);
+  --primary-fg: oklch(0.99 0.01 90);
+  --soft: oklch(0.92 0.03 275);
   --danger: oklch(0.55 0.18 25);
-  --header: oklch(0.985 0.006 145 / 0.86);
-  --glow: oklch(0.88 0.05 145 / 0.55);
+  --header: oklch(0.955 0.02 275 / 0.9);
+  --glow: oklch(0.88 0.07 55 / 0.4);
+  --ink: oklch(0.32 0.07 265);
+  --exec: oklch(0.93 0.08 85);
+  --exec-edge: oklch(0.62 0.16 48);
   --bottom-h: 64px;
-  --radius: 1rem;
+  --radius: 1.05rem;
   --font-display: var(--font-fraunces), "Iowan Old Style", "Palatino Linotype", serif;
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
 .dark {
-  --background: oklch(0.145 0.018 145);
-  --foreground: oklch(0.97 0.01 145);
-  --card: oklch(0.19 0.022 145);
-  --muted: oklch(0.72 0.02 145);
-  --border: oklch(0.3 0.03 145);
-  --primary: oklch(0.74 0.13 145);
-  --primary-fg: oklch(0.16 0.02 145);
-  --soft: oklch(0.23 0.03 145);
+  --background: oklch(0.17 0.04 265);
+  --foreground: oklch(0.94 0.02 80);
+  --card: oklch(0.22 0.035 265);
+  --muted: oklch(0.72 0.03 80);
+  --border: oklch(0.34 0.04 265);
+  --primary: oklch(0.78 0.12 65);
+  --primary-fg: oklch(0.2 0.04 265);
+  --soft: oklch(0.26 0.04 265);
   --danger: oklch(0.72 0.15 25);
-  --header: oklch(0.145 0.018 145 / 0.9);
-  --glow: oklch(0.35 0.06 145 / 0.35);
+  --header: oklch(0.17 0.04 265 / 0.9);
+  --glow: oklch(0.4 0.08 55 / 0.28);
+  --ink: oklch(0.88 0.03 80);
+  --exec: oklch(0.32 0.06 70);
+  --exec-edge: oklch(0.78 0.12 65);
 }
 
 html,
@@ -42,16 +51,33 @@ body {
 body {
   margin: 0;
   font-family: var(--font-sans);
+  background-color: var(--background);
   background-image:
-    radial-gradient(1000px 420px at 12% -10%, var(--glow), transparent 60%),
-    radial-gradient(800px 360px at 92% 8%, oklch(0.9 0.03 180 / 0.25), transparent 55%);
+    radial-gradient(920px 480px at 8% -12%, var(--glow), transparent 58%),
+    radial-gradient(720px 380px at 100% 0%, oklch(0.82 0.06 275 / 0.28), transparent 52%),
+    linear-gradient(165deg, transparent 40%, oklch(0.9 0.04 55 / 0.18) 100%),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 11px,
+      oklch(0.45 0.05 265 / 0.035) 11px,
+      oklch(0.45 0.05 265 / 0.035) 12px
+    );
   background-attachment: fixed;
 }
 
 .dark body {
   background-image:
-    radial-gradient(900px 400px at 10% -8%, var(--glow), transparent 58%),
-    radial-gradient(700px 320px at 95% 0%, oklch(0.28 0.04 180 / 0.28), transparent 55%);
+    radial-gradient(880px 420px at 6% -10%, var(--glow), transparent 55%),
+    radial-gradient(640px 360px at 100% 4%, oklch(0.35 0.07 280 / 0.35), transparent 50%),
+    linear-gradient(170deg, transparent 30%, oklch(0.22 0.05 55 / 0.25) 100%),
+    repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 11px,
+      oklch(0.9 0.02 80 / 0.03) 11px,
+      oklch(0.9 0.02 80 / 0.03) 12px
+    );
 }
 
 a {
@@ -207,7 +233,7 @@ a {
 
 .btn-press:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px oklch(0.35 0.05 145 / 0.14);
+  box-shadow: 0 8px 20px oklch(0.4 0.06 48 / 0.16);
 }
 
 .btn-press:active {
@@ -216,7 +242,7 @@ a {
 }
 
 .btn-primary.btn-press:hover {
-  box-shadow: 0 10px 24px oklch(0.4 0.08 145 / 0.28);
+  box-shadow: 0 10px 24px oklch(0.5 0.1 48 / 0.28);
 }
 
 .motion-enter {
@@ -383,9 +409,12 @@ a {
 .focus-panel {
   border-radius: calc(var(--radius) + 4px);
   border: 1px solid var(--border);
-  background: color-mix(in oklab, var(--card) 88%, var(--soft));
+  border-left: 4px solid var(--exec-edge);
+  background:
+    linear-gradient(135deg, var(--exec) 0%, transparent 42%),
+    color-mix(in oklab, var(--card) 92%, var(--soft));
   padding: 1rem 1.05rem 1.1rem;
-  box-shadow: 0 18px 40px oklch(0.3 0.03 145 / 0.06);
+  box-shadow: 0 18px 40px oklch(0.35 0.05 255 / 0.08);
 }
 
 .focus-panel-head h2 {
@@ -831,7 +860,7 @@ a {
   padding: 0.5rem 0 2rem;
 }
 .page-head h1 {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-display);
   font-size: 1.55rem;
   margin: 0 0 0.35rem;
 }
@@ -869,13 +898,13 @@ a {
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: oklch(0.92 0.04 145);
-  color: oklch(0.35 0.08 145);
+  background: var(--soft);
+  color: var(--ink);
   font-weight: 700;
 }
 .dark .how-index {
-  background: oklch(0.28 0.04 145);
-  color: oklch(0.9 0.03 145);
+  background: var(--soft);
+  color: var(--primary);
 }
 .how-steps h2 {
   margin: 0 0 0.25rem;
@@ -892,20 +921,20 @@ a {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: oklch(0.4 0.1 55);
-  background: #fff4cc;
-  border: 1px solid #e07000;
+  color: var(--ink);
+  background: var(--exec);
+  border: 1px solid var(--exec-edge);
   border-radius: 0.4rem;
   padding: 0.2rem 0.45rem;
   margin: 0 0 0.5rem;
 }
 .dark .mock-badge {
-  color: oklch(0.92 0.04 85);
-  background: oklch(0.28 0.05 70);
-  border-color: #e07000;
+  color: var(--primary);
+  background: var(--exec);
+  border-color: var(--exec-edge);
 }
 .idea-name {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   margin: 0.25rem 0 0;
   font-weight: 600;
@@ -997,11 +1026,13 @@ a {
     min-height: 44px;
   }
   .side-nav-links a.active {
-    background: oklch(0.92 0.04 145);
+    background: var(--soft);
     font-weight: 600;
+    color: var(--ink);
   }
   .dark .side-nav-links a.active {
-    background: oklch(0.28 0.04 145);
+    background: var(--soft);
+    color: var(--primary);
   }
   .side-nav-legal {
     margin-top: auto;

@@ -1,4 +1,4 @@
-**Version:** 0.1.4
+**Version:** 0.1.5
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -50,6 +50,10 @@ Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth clie
 - Local: `http://localhost:3000/api/auth/callback/google`
 
 ## Current version notes
+
+### 0.1.5
+
+- Visual redesign (“Ledger dusk”): lilac paper + ink navy + apricot (not default green); Outfit + Fraunces; refreshed hero/OG/icon.
 
 ### 0.1.4
 

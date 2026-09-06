@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { Fraunces, Outfit } from "next/font/google";
 import { AppChrome } from "@/components/app-chrome";
 import { PrefsProvider } from "@/components/prefs-provider";
 import { AppThemeProvider } from "@/components/theme";
 import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f6f8f5" },
-    { media: "(prefers-color-scheme: dark)", color: "#141a14" },
+    { media: "(prefers-color-scheme: light)", color: "#efeaf5" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a2e" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -106,7 +106,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${dmSans.variable} ${fraunces.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${fraunces.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -118,7 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body style={{ fontFamily: "var(--font-dm-sans), var(--font-sans)" }}>
+      <body style={{ fontFamily: "var(--font-outfit), var(--font-sans)" }}>
         <AppThemeProvider>
           <PrefsProvider>
             <AppChrome>{children}</AppChrome>
