@@ -1,4 +1,4 @@
-**Version:** 0.1.3
+**Version:** 0.1.4
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -50,6 +50,10 @@ Optional Google OAuth (not required for v0.1 shell): create a **new** OAuth clie
 - Local: `http://localhost:3000/api/auth/callback/google`
 
 ## Current version notes
+
+### 0.1.4
+
+- project-init visual hard gate: product-specific hero light/dark + OG, logo/`icon.svg`, SVG nav icons (Today/Archive/How), primary-route entrance + CTA + fact stagger motion with `prefers-reduced-motion`.
 
 ### 0.1.3
 

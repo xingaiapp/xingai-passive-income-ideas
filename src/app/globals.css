@@ -100,14 +100,54 @@ a {
   font-weight: 700;
 }
 
-.brand-mark {
+.brand-logo {
   width: 28px;
   height: 28px;
   border-radius: 9px;
-  background:
-    linear-gradient(145deg, var(--primary), oklch(0.58 0.1 175));
-  box-shadow: 0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent);
   flex-shrink: 0;
+}
+
+.brand-lockup-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  padding: 0 0.65rem;
+}
+
+.nav-link,
+.bottom-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-ico {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.bottom-tab {
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.bottom-tab .nav-ico {
+  width: 22px;
+  height: 22px;
+}
+
+.drawer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .brand-text {
@@ -157,10 +197,85 @@ a {
   font-weight: 650;
 }
 
+.btn-press {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.btn-press:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px oklch(0.35 0.05 145 / 0.14);
+}
+
+.btn-press:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
+}
+
+.btn-primary.btn-press:hover {
+  box-shadow: 0 10px 24px oklch(0.4 0.08 145 / 0.28);
+}
+
+.motion-enter {
+  animation: rise 0.42s ease both;
+}
+
+.motion-delay-1 {
+  animation-delay: 0.08s;
+}
+
+.motion-delay-2 {
+  animation-delay: 0.16s;
+}
+
+.motion-delay-3 {
+  animation-delay: 0.24s;
+}
+
+.motion-stagger {
+  animation: rise 0.4s ease both;
+  animation-delay: calc(0.22s + var(--i, 0) * 0.06s);
+}
+
+.drawer-enter {
+  animation: drawer-in 0.28s ease both;
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0.4;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-enter,
+  .motion-stagger,
+  .drawer-enter,
+  .focus-list li,
+  .btn-press {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .btn-press:hover,
+  .btn-press:active {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 .main {
   flex: 1;
   width: 100%;
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 1rem 1rem calc(var(--bottom-h) + env(safe-area-inset-bottom) + 1.25rem);
 }
@@ -177,7 +292,7 @@ a {
 
 .brand-lockup {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.45rem;
   margin: 0 0 0.85rem;
   font-size: 0.78rem;
@@ -522,20 +637,32 @@ a {
   backdrop-filter: blur(14px);
 }
 
-.bottom-nav a {
-  display: grid;
-  place-items: center;
+.bottom-nav a,
+.bottom-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
   min-height: 44px;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 650;
   color: var(--muted);
+  padding: 0.25rem 0.2rem;
 }
 
 .bottom-nav a.active,
+.bottom-tab.active,
 .drawer-links a.active {
   color: var(--primary);
   background: var(--soft);
+}
+
+.drawer-links a.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
 .drawer-backdrop {
@@ -831,27 +958,36 @@ a {
   .sidebar-collapsed .side-nav {
     width: 4.25rem;
   }
-  .sidebar-collapsed .side-nav-links a,
-  .sidebar-collapsed .side-nav-legal a {
-    font-size: 0;
+  .sidebar-collapsed .nav-label,
+  .sidebar-collapsed .side-nav-legal {
+    display: none;
+  }
+  .sidebar-collapsed .side-nav-links a.nav-link {
     width: 2.75rem;
     height: 2.75rem;
+    padding: 0;
     display: grid;
     place-items: center;
     border-radius: 0.75rem;
-    overflow: hidden;
   }
-  .sidebar-collapsed .side-nav-links a::first-letter,
-  .sidebar-collapsed .side-nav-legal a::first-letter {
-    font-size: 0.95rem;
-    font-weight: 700;
+  .sidebar-collapsed .side-nav-links a.nav-link .nav-ico {
+    opacity: 1;
   }
   .side-nav-links {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
   }
-  .side-nav-links a,
+  .side-nav-links a.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: 0.75rem;
+    color: var(--foreground);
+    text-decoration: none;
+    min-height: 44px;
+  }
   .side-nav-legal a {
     display: block;
     padding: 0.7rem 0.85rem;
