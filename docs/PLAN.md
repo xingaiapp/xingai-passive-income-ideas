@@ -1,12 +1,13 @@
 # Passive Income Idea 智报 — Delivery Plan
 
 > Status: **0.2.5** — live at passive.xingai.app  
-> Reviewed: 2026-09-06
+> Reviewed: 2026-09-07
 
 ## Phase 0 — Contract
 
 - [x] Private GitHub repo + README / DISCLAIMER / PLAN
 - [x] ADR-001: product boundary (personal daily Idea report vs Invest 智报 vs Opportunity Radar)
+- [x] ADR-002: worker publish path — static JSON/PDF for read-only UI (+ en/zh/ko locale packs)
 - [x] project-init public shell (chrome, i18n, theme, legal, SEO/AEO, dot-app Soon)
 - [x] Operator profile config (age/locale/skills/constraints) as versioned YAML
 - [x] Idea memory store (SQLite) for anti-repeat + “still best → progress update”
@@ -34,6 +35,12 @@
 - [x] Live `launchStatus` when domain is up
 - [ ] Optional auth (new Google OAuth client)
 - [x] Broader live web research / optional LLM polish (still fail-closed)
+
+## Current next step
+
+1. Resend live schedule (`RESEND_API_KEY` + `PASSIVE_INCOME_REPORT_ENABLED=true`) when keys are available.
+2. Merge marketing `xingai-dot-app` Passive Income **live** PR if not on `main` yet.
+3. Optional: Google OAuth; deeper open-web research (new ADR before request-path compute).
 
 ## PDF fixed outline
 

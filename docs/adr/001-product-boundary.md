@@ -3,6 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-09-06
 - **Layer:** Product / Report worker + public shell
+- **Related:** [ADR 002](002-worker-publish-static-ui.md) (live static publish path)
 
 ## Context
 
@@ -21,7 +22,7 @@ The new product needs a clear job: one daily **personal** passive-income / cash-
    - Python report worker under `worker/` (PDF + Resend), modeled on Invest `investment_zhibao`.
 2. **Not** a fork of Opportunity Radar or Founder Brief content pipelines.
 3. **Strict separation** of investment returns vs business revenue in all copy and models.
-4. Public UI may show mock Idea until worker is live; email/PDF remain the primary decision artifact.
+4. *(Historical)* Public UI may show mock Idea until worker is live; email/PDF remain the primary decision artifact. **Superseded for the live path by [ADR 002](002-worker-publish-static-ui.md).**
 
 ## Consequences
 

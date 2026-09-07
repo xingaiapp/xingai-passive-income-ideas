@@ -58,6 +58,7 @@ See [`.env.example`](./.env.example). Never commit secrets.
 
 - Idea body follows EN / 中文 / 한국어 (no more EN chrome + Chinese copy mix).
 - Desktop Today layout stacks full-width Idea panel under the intro (readable, not clipped).
+- Docs: [ADR 002](docs/adr/002-worker-publish-static-ui.md) — worker static publish + read-only UI (CQRS-style).
 
 ### 0.2.4
 
@@ -67,6 +68,7 @@ See [`.env.example`](./.env.example). Never commit secrets.
 
 - Today page shows full live fields (scores, capital, evidence, day-7, clickable sources).
 - Archive index + public PDF publish path for real on-site data.
+- Covered by [ADR 002](docs/adr/002-worker-publish-static-ui.md).
 
 ### 0.2.2
 
