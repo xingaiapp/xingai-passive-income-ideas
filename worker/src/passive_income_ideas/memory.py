@@ -236,6 +236,7 @@ def snapshot_to_public_dict(snapshot: IdeaSnapshot) -> dict:
             }
             for sid, s in snapshot.sources.items()
         },
+        "locales": snapshot.locales or {},
     }
 
 

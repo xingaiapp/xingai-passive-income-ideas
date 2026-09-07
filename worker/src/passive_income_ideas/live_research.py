@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import logging
+from dataclasses import replace
 from datetime import date, datetime, timezone
 from typing import Any
 
 from .config import load_app_config, load_idea_catalog
+from .localize import attach_locales
 from .memory import connect, find_duplicate, list_recent, recent_pick_for_id, upsert_pick
 from .models import (
     UNVERIFIED,
@@ -23,7 +25,6 @@ def _score_idea(profile: OperatorProfile, item: dict[str, Any]) -> int:
     profile_skills = {s.lower() for s in profile.skills}
     overlap = len(idea_skills & profile_skills)
     base = int(item.get("fit_score") or 5)
-    # Prefer business_revenue for this operator's wealth-building constraints
     kind = str(item.get("income_kind") or "")
     kind_bonus = 1 if kind == "business_revenue" else (-2 if kind == "investment_return" else 0)
     return base * 10 + overlap * 3 + kind_bonus
@@ -48,7 +49,6 @@ def _evidence(item: dict[str, Any]) -> tuple[EvidenceItem, ...]:
         kind = str(ev.get("kind") or "inference")
         if kind not in {"fact", "inference", "recommendation"}:
             kind = "inference"
-        # Fail-closed: fact without verified source ids becomes inference
         source_ids = tuple(str(x) for x in (ev.get("source_ids") or ()))
         text = str(ev.get("text") or "")
         if kind == "fact" and not source_ids:
@@ -59,7 +59,6 @@ def _evidence(item: dict[str, Any]) -> tuple[EvidenceItem, ...]:
 
 
 def _progress_overlay(item: dict[str, Any], times: int) -> tuple[str, str]:
-    """Advance do_today along the Idea's day7 plan when the same Idea continues."""
     day7 = [str(x) for x in (item.get("day7_plan") or ()) if str(x).strip()]
     step_idx = min(max(times, 0), max(len(day7) - 1, 0)) if day7 else 0
     step = day7[step_idx] if day7 else str(item.get("do_today") or "")
@@ -69,6 +68,18 @@ def _progress_overlay(item: dict[str, Any], times: int) -> tuple[str, str]:
     )
     do_today = f"{note} 今天 30 分钟：{step}"
     return "progress", do_today
+
+
+def _probe_lists(sources: dict[str, SourceRef]) -> tuple[list[str], list[str]]:
+    reachable: list[str] = []
+    failed: list[str] = []
+    for sid, src in sources.items():
+        note = src.note or ""
+        if "web probe OK" in note:
+            reachable.append(sid)
+        elif "web probe failed" in note:
+            failed.append(sid)
+    return reachable, failed
 
 
 def build_live_snapshot(
@@ -94,6 +105,7 @@ def build_live_snapshot(
         chosen: dict[str, Any] | None = None
         continuity = "new"
         do_today_override: str | None = None
+        times_picked = 0
 
         for item in ranked:
             idea_id = str(item.get("idea_id") or "")
@@ -101,10 +113,10 @@ def build_live_snapshot(
             if not idea_id or not name:
                 continue
 
-            # Continuity: if this top idea was picked recently, keep it as progress
             recent = recent_pick_for_id(conn, idea_id, settings.continuity_days)
             if recent and item is ranked[0]:
                 continuity, do_today_override = _progress_overlay(item, recent.times_picked)
+                times_picked = recent.times_picked
                 chosen = item
                 break
 
@@ -112,22 +124,21 @@ def build_live_snapshot(
             if dup and dup.idea_id != idea_id:
                 log.info("skip near-duplicate %s ~ %s (%.2f)", name, dup.idea_name, dup.score)
                 continue
-            # Skip if same id was picked in last continuity window but not top anymore
             if recent and item is not ranked[0]:
                 continue
             chosen = item
             continuity = "new"
+            times_picked = 0
             break
 
         if chosen is None:
-            # Fall back to top-ranked even if duplicate (still better than empty)
             chosen = ranked[0]
             continuity = "progress"
             do_today_override = str(chosen.get("do_today") or "")
+            times_picked = 0
             log.warning("catalog exhausted filters; falling back to %s", chosen.get("idea_id"))
 
         sources = _sources(chosen)
-        # Downgrade fact evidence that cites unverified sources
         evidence = []
         for ev in _evidence(chosen):
             if ev.kind == "fact":
@@ -191,6 +202,19 @@ def build_live_snapshot(
             from .llm_polish import maybe_polish_snapshot
 
             snap = maybe_polish_snapshot(snap, force_llm=force_llm, enabled=True)
+
+        reachable, failed = _probe_lists(snap.sources)
+        locales = attach_locales(
+            snap,
+            chosen=chosen,
+            profile=profile,
+            raw_cfg=cfg.raw,
+            continuity=continuity,
+            times_picked=times_picked,
+            probe_reachable=reachable,
+            probe_failed=failed,
+        )
+        snap = replace(snap, locales=locales)
 
         upsert_pick(conn, snap)
         return snap

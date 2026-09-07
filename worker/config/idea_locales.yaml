@@ -1,0 +1,334 @@
+# UI translations for idea_catalog.yaml (root catalog fields remain 简体中文 for PDF/email).
+# Keys under each idea_id: en / ko — same field names as the catalog.
+
+version: 1
+ideas:
+  ops-checklist-sub:
+    en:
+      idea_name: "Vertical AI ops checklist (subscription)"
+      one_liner: "Productize cloud/.NET/ops checklists into a small-team subscription list + reminders — not a generic ChatGPT shell."
+      income_band: "Business revenue (not investment return) estimate: about $0–2,000/mo in 90 days after validation (未核实; no paid validation yet)"
+      startup_capital: "Startup capital about $0–500 (domain, email, basic hosting); no fundraising required"
+      time_per_week: "Validation: 4–6 hours/week; stop if there is no paid intent"
+      first_revenue_eta: "If paid intent appears in 10 interviews, first revenue possible in 2–4 weeks (pre-sale/pilot, 未核实)"
+      scalability: "Medium: expand from one vertical to adjacent industries; reminders can be productized"
+      do_today: "30 min: list 5 engineering leads; book 3 for 15-minute interviews (ask only: which checks still live in sheets/chat?)"
+      dont_today: "Don’t buy ads, don’t build a full SaaS first, don’t set up complex company structures"
+      biggest_risk: "Polite interest ≠ willingness to pay; if 10 interviews yield zero paid intent, stop and switch Ideas"
+      stop_rules:
+        - "10 target-user interviews with no clear paid intent"
+        - "Needs 3+ months full-time to reach a sellable minimum"
+        - "Depends on unverifiable traffic/revenue promise channels"
+      day7_plan:
+        - "D1: Book 3 interviews and finalize the question list"
+        - "D2–D3: Complete at least 5 interviews; log pain frequency"
+        - "D4: Draft a one-page value prop (who, pain, price anchor)"
+        - "D5: Produce one deliverable checklist sample"
+        - "D6: Show the sample to 2 interviewees; ask about $29–$99/mo pilot"
+        - "D7: Write go/no-go"
+      day30_goals:
+        - "At least 15 interview notes"
+        - "One reusable checklist template"
+        - "At least one paid pilot or written pre-order intent"
+      business_model: "Subscription business revenue: base checklist $29/mo, team $99/mo. Not dividends or investment yield."
+      competition: "Generic PM tools and ChatGPT workflows are substitutes; differentiation is vertical checks + accountability — not a blank AI chat box."
+      market_evidence:
+        - kind: inference
+          text: "Small teams still often run release/ops checks in sheets/chat (career experience inference, not a formal survey)."
+          source_ids: []
+        - kind: fact
+          text: "U.S. self-employed people need to understand self-employment tax obligations (IRS page exists)."
+          source_ids: [s_irs]
+        - kind: fact
+          text: "U.S. SBA publishes a public start-a-business guide (page exists; not a demand statistic for this Idea)."
+          source_ids: [s_sba]
+        - kind: fact
+          text: "Azure Well-Architected publishes reliability check frameworks (public docs exist; shows checklist content has mature references — not paid demand)."
+          source_ids: [s_azure_waf]
+        - kind: recommendation
+          text: "Sell the checklist + reminders first; software later. Validate price with pre-sales."
+          source_ids: []
+      source_notes:
+        s_irs: "Tax overview page exists; not an income forecast for this Idea"
+        s_sba: "Public start-business guide; not proof of market demand"
+        s_azure_waf: "Public ops checklist framework; competitive/context only, not an income forecast"
+        s_bls: "未核实 direct causal link to this Idea"
+    ko:
+      idea_name: "수직 산업 AI 운영 체크리스트(구독)"
+      one_liner: "클라우드/.NET/운영 점검 항목을 소규모 팀이 구독할 수 있는 체크리스트+알림으로 제품화 — 범용 ChatGPT 껍데기가 아님."
+      income_band: "사업 매출(투자 수익 아님) 추정: 검증 후 90일 약 $0–2,000/월 (未核实; 유료 검증 없음)"
+      startup_capital: "시작 자본 약 $0–500(도메인·이메일·기본 호스팅); 투자 유치 불필요"
+      time_per_week: "검증기 주 4–6시간; 유료 의도 없으면 중단"
+      first_revenue_eta: "인터뷰 10회 중 유료 의도가 있으면 2–4주 내 첫 매출 가능(사전판매/파일럿, 未核实)"
+      scalability: "중: 한 수직에서 인접 산업으로 확장 가능; 알림은 제품화 가능"
+      do_today: "30분: 엔지니어링 리드 5명 목록 → 3명과 15분 인터뷰(질문: 어떤 점검이 여전히 표/채팅인가?)"
+      dont_today: "광고 구매·풀 SaaS 선구축·복잡한 회사 구조는 하지 말 것"
+      biggest_risk: "예의 바른 관심 ≠ 지불 의사; 인터뷰 10회 유료 의도 0이면 중단하고 Idea 교체"
+      stop_rules:
+        - "타깃 유저 인터뷰 10회에도 명확한 유료 의도 없음"
+        - "판매 가능한 최소 버전까지 풀타임 3개월 이상 필요"
+        - "검증 불가한 트래픽/수익 약속 채널에 의존"
+      day7_plan:
+        - "D1: 인터뷰 3건 예약 + 질문 목록"
+        - "D2–D3: 인터뷰 5회 이상 + 고통 빈도 기록"
+        - "D4: 1페이지 가치제안(누구·고통·가격 앵커)"
+        - "D5: 납품 가능한 체크리스트 샘플 1개"
+        - "D6: 인터뷰 2명에게 샘플 보여주고 $29–$99/월 파일럿 의사 확인"
+        - "D7: go/no-go 작성"
+      day30_goals:
+        - "인터뷰 기록 15건 이상"
+        - "재사용 가능한 체크리스트 템플릿 1개"
+        - "유료 파일럿 또는 서면 사전구매 의도 1건 이상"
+      business_model: "구독 사업 매출: 기본 $29/월, 팀 $99/월. 배당·투자 수익률이 아님."
+      competition: "범용 PM·ChatGPT 워크플로가 대체재; 차별점은 수직 점검+책임 경계."
+      market_evidence:
+        - kind: inference
+          text: "소규모 팀은 여전히 표/채팅으로 배포·운영 점검을 하는 경우가 많음(경력 추론, 공식 설문 아님)."
+          source_ids: []
+        - kind: fact
+          text: "미국 자영업자는 self-employment tax 의무를 이해해야 함(IRS 페이지 존재)."
+          source_ids: [s_irs]
+        - kind: fact
+          text: "미국 SBA가 창업 공개 가이드를 제공(페이지 존재; 이 Idea 수요 통계 아님)."
+          source_ids: [s_sba]
+        - kind: fact
+          text: "Azure Well-Architected가 신뢰성 점검 프레임을 공개(문서 존재; 유료 수요 증명 아님)."
+          source_ids: [s_azure_waf]
+        - kind: recommendation
+          text: "먼저 체크리스트+알림을 팔고 소프트웨어는 나중에. 사전판매로 가격 검증."
+          source_ids: []
+      source_notes:
+        s_irs: "세무 개요 페이지 존재; 이 Idea 수입 예측 아님"
+        s_sba: "공개 창업 가이드; 수요 증명 아님"
+        s_azure_waf: "공개 운영 점검 프레임; 맥락용, 수입 예측 아님"
+        s_bls: "이 Idea와 직접 인과 未核实"
+
+  net-upgrade-playbook:
+    en:
+      idea_name: ".NET legacy upgrade assessment playbook (fixed price)"
+      one_liner: "Turn Framework→modern-stack assessments you’ve done into a repeatable fixed-price diagnostic — not open-ended hourly outsourcing."
+      income_band: "Business revenue estimate: $2,500–$7,500 per diagnostic; monthly depends on closes (未核实)"
+      startup_capital: "About $0–300 (templates and meeting tools)"
+      time_per_week: "Validation: 5–8 hours/week"
+      first_revenue_eta: "With existing network, first paid job possible in 2–6 weeks (未核实)"
+      scalability: "Low–medium: templates and recordings; later partner licensing"
+      do_today: "30 min: list 8 former colleagues/clients who may still run .NET Framework; write a 3-sentence outreach"
+      dont_today: "Don’t quote a full migration yet; don’t promise timeline or savings amounts"
+      biggest_risk: "Buyers want free consulting; starting without a written scope becomes unpaid advising"
+      stop_rules:
+        - "12 outreaches with zero paid assessment intent"
+        - "Requires full-time onsite to deliver"
+        - "Buyer demands unverifiable ROI guarantees"
+      day7_plan:
+        - "D1: Define deliverables (architecture map, risk table, 90-day roadmap)"
+        - "D2: Set fixed price and exclusions"
+        - "D3–D5: Send 8 outreaches"
+        - "D6: Complete one free 20-minute screen call"
+        - "D7: Decide whether to open the first scoped engagement"
+      day30_goals:
+        - "At least 2 paid assessment intents"
+        - "One reusable delivery template"
+        - "Decide on template + partner revenue-share path"
+      business_model: "One-time professional fee + optional monthly retainer. Not investment returns."
+      competition: "Big consultancies are slow/expensive; freelancers are scattered. Differentiation is fixed-scope .NET diagnostics."
+      market_evidence:
+        - kind: inference
+          text: "Many enterprises still carry .NET Framework debt (industry common knowledge, not a fresh sample)."
+          source_ids: []
+        - kind: fact
+          text: "U.S. self-employment income has self-employment tax considerations (IRS page exists)."
+          source_ids: [s_irs]
+        - kind: recommendation
+          text: "Sell the fixed-price diagnostic first; migration delivery later."
+          source_ids: []
+      source_notes:
+        s_irs: "Tax page exists; not an income forecast"
+    ko:
+      idea_name: ".NET 레거시 업그레이드 평가 Playbook(고정가)"
+      one_liner: "Framework→모던 스택 평가를 반복 가능한 고정가 진단 패키지로 — 무한 시간제 외주가 아님."
+      income_band: "사업 매출 추정: 진단 건당 $2,500–$7,500; 월 매출은 성사량에 따름(未核实)"
+      startup_capital: "약 $0–300(템플릿·회의 도구)"
+      time_per_week: "검증기 주 5–8시간"
+      first_revenue_eta: "기존 인맥이 있으면 2–6주 내 첫 유료 가능(未核实)"
+      scalability: "중저: 템플릿·녹화 제품화; 이후 파트너 라이선스"
+      do_today: "30분: 아직 .NET Framework를 쓸 수 있는 전 동료/고객 8곳 목록 + 아웃리치 3문장"
+      dont_today: "전체 마이그레이션 견적·일정·절감액 약속 금지"
+      biggest_risk: "무료 컨설팅만 원함; 서면 범위 없이 시작하면 무급 자문이 됨"
+      stop_rules:
+        - "아웃리치 12회에 유료 평가 의도 0"
+        - "상주 풀타임이어야 납품 가능"
+        - "검증 불가 ROI 보장 요구"
+      day7_plan:
+        - "D1: 산출물 정의(아키텍처·리스크표·90일 로드맵)"
+        - "D2: 고정가·제외 항목"
+        - "D3–D5: 아웃리치 8통"
+        - "D6: 무료 20분 스크리닝 1회"
+        - "D7: 첫 범위서 진행 여부 결정"
+      day30_goals:
+        - "유료 평가 의도 2건 이상"
+        - "재사용 납품 템플릿 1개"
+        - "템플릿+파트너 분배 경로 결정"
+      business_model: "일회성 전문 수수료 + 선택 월 리테이너. 투자 수익 아님."
+      competition: "대형 컨설팅은 비싸고 느림; 프리랜서는 산만. 차별점은 고정 범위 .NET 진단."
+      market_evidence:
+        - kind: inference
+          text: "많은 기업에 .NET Framework 부채가 남아 있음(업계 상식 추론)."
+          source_ids: []
+        - kind: fact
+          text: "미국 자영업 소득은 self-employment tax를 고려해야 함(IRS 페이지 존재)."
+          source_ids: [s_irs]
+        - kind: recommendation
+          text: "고정가 진단을 먼저 팔고 마이그레이션은 나중에."
+          source_ids: []
+      source_notes:
+        s_irs: "세무 페이지 존재; 수입 예측 아님"
+
+  ai-ops-office-hours:
+    en:
+      idea_name: "AI adoption office hours for eng leads (membership)"
+      one_liner: "Small membership for engineering managers: biweekly office hours + decision checklists to put AI tools on real delivery."
+      income_band: "Business revenue estimate: $79–$199/seat/mo; early 5–15 members is meaningful (未核实)"
+      startup_capital: "About $0–200 (meeting + email tools)"
+      time_per_week: "Validation: 3–5 hours/week"
+      first_revenue_eta: "If 3 of 10 waitlist people pay, about 2–4 weeks (未核实)"
+      scalability: "Medium: recordings later; co-hosts later"
+      do_today: "30 min: write a one-page membership charter (fit/unfit, biweekly agenda, refund rules) and send to 5 eng leads for feedback"
+      dont_today: "Don’t build a full course platform; don’t promise promotions or performance outcomes"
+      biggest_risk: "Becomes a free Q&A group; without agenda/boundaries it won’t scale"
+      stop_rules:
+        - "After 20 invites, waitlist < 5"
+        - "Requires daily instant responses to sustain"
+        - "Members demand unverifiable performance guarantees"
+      day7_plan:
+        - "D1: Membership charter + price anchors"
+        - "D2–D4: Invite 15 people for feedback"
+        - "D5: Capture objections"
+        - "D6: Open 5 founding seats for pre-sale"
+        - "D7: go/no-go"
+      day30_goals:
+        - "At least 5 paid or prepaid founding members"
+        - "Two office-hours agendas archived"
+        - "Continue or stop"
+      business_model: "Membership subscription business revenue. Not investment dividends."
+      competition: "Generic AI communities and courses are common; differentiation is eng-lead decision cadence + small-group boundaries."
+      market_evidence:
+        - kind: inference
+          text: "Eng teams try AI tools but lack management cadence (experience inference, not sampled)."
+          source_ids: []
+        - kind: fact
+          text: "Self-employed/independent advisors should understand self-employment tax (IRS page exists)."
+          source_ids: [s_irs]
+        - kind: recommendation
+          text: "Sell a small membership first; content product later."
+          source_ids: []
+      source_notes:
+        s_irs: "Tax page exists; not an income forecast"
+    ko:
+      idea_name: "엔지니어링 리드 AI 도입 Office Hours(멤버십)"
+      one_liner: "엔지니어링 매니저 소규모 멤버십: 격주 office hours + 결정 체크리스트로 실제 납품에 AI 도구를 올림."
+      income_band: "사업 매출 추정: $79–$199/좌석/월; 초기 5–15명이면 의미 있음(未核实)"
+      startup_capital: "약 $0–200(회의·메일 도구)"
+      time_per_week: "검증기 주 3–5시간"
+      first_revenue_eta: "대기자 10명 중 3명 결제 시 약 2–4주(未核实)"
+      scalability: "중: 녹화 축적; 이후 공동 호스트"
+      do_today: "30분: 멤버십 헌장 1페이지(적합/부적합·격주 안건·환불) 작성 후 엔지니니어링 리드 5명에게 피드백 요청"
+      dont_today: "풀 코스 플랫폼·승진/성과 약속 금지"
+      biggest_risk: "무료 Q&A 방이 됨; 안건·경계 없으면 확장 불가"
+      stop_rules:
+        - "초대 20회 후 waitlist < 5"
+        - "매일 즉시 응답해야 유지 가능"
+        - "검증 불가 성과 보장 요구"
+      day7_plan:
+        - "D1: 헌장 + 가격 앵커"
+        - "D2–D4: 15명 피드백 초대"
+        - "D5: 반대 의견 정리"
+        - "D6: 창립 좌석 5개 사전판매"
+        - "D7: go/no-go"
+      day30_goals:
+        - "유료/선불 창립 멤버 5명 이상"
+        - "office hours 안건 2회 아카이브"
+        - "계속/중단 결정"
+      business_model: "멤버십 구독 사업 매출. 투자 배당 아님."
+      competition: "범용 AI 커뮤니티·대형 강의가 많음; 차별점은 리드 결정 리듬+소규모 경계."
+      market_evidence:
+        - kind: inference
+          text: "엔지니어링 팀은 AI 도구를 시도하지만 관리 리듬이 부족(경험 추론)."
+          source_ids: []
+        - kind: fact
+          text: "자영업/독립 자문은 self-employment tax를 알아야 함(IRS 페이지 존재)."
+          source_ids: [s_irs]
+        - kind: recommendation
+          text: "소규모 멤버십을 먼저 팔고 콘텐츠 제품은 나중에."
+          source_ids: []
+      source_notes:
+        s_irs: "세무 페이지 존재; 수입 예측 아님"
+
+  dividend-etf-study:
+    en:
+      idea_name: "Dividend ETF study notes (not stock advice)"
+      one_liner: "Turn publicly checkable dividend-ETF mechanics into personal study notes + a checklist — explicitly not investment advice."
+      income_band: "Investment returns: no return forecast. Any yield figure without primary disclosure stays 未核实."
+      startup_capital: "Study cost negligible; real investing is separate and your own decision"
+      time_per_week: "2–3 hours/week reading public filings"
+      first_revenue_eta: "This Idea is not course-first; productizing needs a separate business Idea"
+      scalability: "Low (learning) / reassess if turned into a paid brief"
+      do_today: "30 min: read one public ETF summary prospectus table of contents; list 5 terms you still don’t understand"
+      dont_today: "Don’t trade on unverified yields; don’t recommend specific tickers to others"
+      biggest_risk: "Study notes mistaken for advice; or citing stale dividend data"
+      stop_rules:
+        - "Start promising returns publicly"
+        - "Use yield screenshots without checkable sources"
+        - "Mix with gambling-style leveraged products"
+      day7_plan:
+        - "D1–D3: Understand fees, concentration, dividend sources"
+        - "D4–D5: Build a personal checklist (still not advice)"
+        - "D6–D7: Stop or convert to a business-content Idea"
+      day30_goals:
+        - "One private checklist"
+        - "Zero public stock picks"
+        - "Decide whether to open a separate content line"
+      business_model: "Default: no business revenue. If selling a brief later, isolate it from investment advice."
+      competition: "Free finance content is abundant; this default is personal learning, not a product."
+      market_evidence:
+        - kind: recommendation
+          text: "Investment Ideas must stay labeled apart from business revenue; no return promises."
+          source_ids: []
+        - kind: inference
+          text: "Public prospectus is a checkable starting point (numbers must be verified in the file)."
+          source_ids: []
+      source_notes:
+        s_sec: "Investor education entry; specific fund figures not verified here"
+    ko:
+      idea_name: "배당 ETF 학습 노트(종목 추천 아님)"
+      one_liner: "공개 확인 가능한 배당 ETF 메커니즘을 개인 학습 노트+체크리스트로 — 명시적으로 투자 조언 아님."
+      income_band: "투자 수익: 수익률 예측 없음. 원문 공시 미확인 수익률은 未核实."
+      startup_capital: "학습 비용은 무시 가능; 실투자는 별도이며 본인 결정"
+      time_per_week: "주 2–3시간 공개 문서 읽기"
+      first_revenue_eta: "이 Idea는 강의 판매가 먼저가 아님; 제품화는 별도 사업 Idea"
+      scalability: "낮음(학습)/유료 브리프로 바꾸면 재평가"
+      do_today: "30분: 공개 ETF summary prospectus 목차 1개 읽고 모르는 용어 5개"
+      dont_today: "미확인 수익률로 매매·타인에게 특정 종목 추천 금지"
+      biggest_risk: "학습 노트를 조언으로 오해; 오래된 배당 데이터 인용"
+      stop_rules:
+        - "대외적으로 수익 약속 시작"
+        - "검증 불가 수익률 스크린샷 사용"
+        - "도박형 레버리지 상품과 혼동"
+      day7_plan:
+        - "D1–D3: 수수료·집중도·배당 원천 이해"
+        - "D4–D5: 개인 체크리스트(여전히 조언 아님)"
+        - "D6–D7: 중단 또는 사업 콘텐츠 Idea로 전환"
+      day30_goals:
+        - "개인용 체크리스트 1개"
+        - "대외 종목 추천 0"
+        - "별도 콘텐츠 라인 여부 결정"
+      business_model: "기본 사업 매출 없음. 이후 브리프 판매 시 투자 조언과 격리."
+      competition: "무료 금융 콘텐츠가 많음; 기본은 개인 학습이지 제품이 아님."
+      market_evidence:
+        - kind: recommendation
+          text: "투자 Idea는 사업 매출과 분리 표기; 수익 약속 금지."
+          source_ids: []
+        - kind: inference
+          text: "공개 prospectus는 확인 가능한 출발점(숫자는 파일에서 직접 확인)."
+          source_ids: []
+      source_notes:
+        s_sec: "투자자 교육 입구; 구체 펀드 수치는 여기서 미검증"

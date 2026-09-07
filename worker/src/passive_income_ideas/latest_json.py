@@ -31,6 +31,14 @@ def _update_archive_index(public_dir: Path, snapshot: IdeaSnapshot, payload: dic
         "is_mock": snapshot.is_mock,
         "json_url": f"/data/ideas/{snapshot.report_date}.json",
         "pdf_url": payload.get("pdf_url") or "",
+        "locales": {
+            lang: {
+                "idea_name": pack.get("idea_name"),
+                "one_liner": pack.get("one_liner"),
+            }
+            for lang, pack in (snapshot.locales or {}).items()
+            if isinstance(pack, dict)
+        },
     }
     items = [x for x in items if x.get("report_date") != snapshot.report_date]
     items.append(entry)

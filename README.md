@@ -1,4 +1,4 @@
-**Version:** 0.2.4
+**Version:** 0.2.5
 
 Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
@@ -42,17 +42,22 @@ python -m passive_income_ideas run-daily                # dry-run email
 # python -m passive_income_ideas run-daily --live
 ```
 
-Config: `worker/config/operator_profile.yaml` (`web_fetch`, `llm_polish`), `idea_catalog.yaml`, SQLite under `worker/data/`.
+Config: `worker/config/operator_profile.yaml` (`web_fetch`, `llm_polish`), `idea_catalog.yaml`, `idea_locales.yaml` (en/ko UI packs), SQLite under `worker/data/`.
 
 **Web research:** probes catalog source URLs (reachability + page title). Never invents market facts from HTML. Failures → `verified=false` + `未核实`.
 
-**Published web artifacts:** each generate writes `public/data/latest-idea.json`, dated `public/data/ideas/YYYY-MM-DD.json`, `public/data/archive-index.json`, and copies the PDF to `public/reports/`.
+**Published web artifacts:** each generate writes `public/data/latest-idea.json` (including `locales.en|zh|ko`), dated `public/data/ideas/YYYY-MM-DD.json`, `public/data/archive-index.json`, and copies the PDF to `public/reports/`. PDF/email stay 简体中文; the public UI follows the language switcher.
 
 **LLM polish (optional):** `OPENAI_API_KEY` or `PASSIVE_INCOME_OPENAI_API_KEY` polishes Chinese copy only; strips new URLs and new money tokens. No key → keep catalog copy.
 
 See [`.env.example`](./.env.example). Never commit secrets.
 
 ## Current version notes
+
+### 0.2.5
+
+- Idea body follows EN / 中文 / 한국어 (no more EN chrome + Chinese copy mix).
+- Desktop Today layout stacks full-width Idea panel under the intro (readable, not clipped).
 
 ### 0.2.4
 

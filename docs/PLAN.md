@@ -1,6 +1,6 @@
 # Passive Income Idea 智报 — Delivery Plan
 
-> Status: **0.2.4** — live at passive.xingai.app  
+> Status: **0.2.5** — live at passive.xingai.app  
 > Reviewed: 2026-09-06
 
 ## Phase 0 — Contract

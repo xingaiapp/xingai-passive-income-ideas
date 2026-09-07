@@ -82,6 +82,8 @@ class IdeaSnapshot:
         "仅供参考，不构成金融、税务或商业建议。不保证收入。"
         "投资收益与商业收入已分开标注。未核实内容不得当作事实。"
     )
+    # UI packs for en/zh/ko (PDF/email keep Chinese root fields)
+    locales: dict[str, dict] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)

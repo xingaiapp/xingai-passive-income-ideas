@@ -18,6 +18,13 @@ operator:
     - 不接受难以核实的承诺
     - 不接受需长期高强度全职投入才能启动的方案
     - 适合 53 岁财富积累阶段：可兼职验证、可外包/自动化
+  i18n:
+    en:
+      background: "Software engineering, .NET, cloud platforms, AI, and engineering management"
+      goals: "Financial independence and long-term passive income"
+    ko:
+      background: "소프트웨어 엔지니어링, .NET, 클라우드, AI, 엔지니어링 관리"
+      goals: "경제적 자유와 장기 수동 소득"
 email:
   to_env: PASSIVE_INCOME_REPORT_TO
   dry_run_default: true

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePrefs } from "@/components/prefs-provider";
-import type { LatestIdea } from "@/lib/latest-idea";
+import { ideaForLocale, type LatestIdea } from "@/lib/latest-idea";
 
 function evidenceLabel(kind: string, labels: { fact: string; inference: string; recommendation: string }) {
   if (kind === "fact") return labels.fact;
@@ -12,28 +12,29 @@ function evidenceLabel(kind: string, labels: { fact: string; inference: string; 
 }
 
 export function TodayClient({ idea }: { idea: LatestIdea | null }) {
-  const { t } = usePrefs();
-  const live = idea && !idea.is_mock;
-  const badge = !idea
+  const { t, locale } = usePrefs();
+  const view = idea ? ideaForLocale(idea, locale) : null;
+  const live = view && !view.is_mock;
+  const badge = !view
     ? t.today.mockBadge
     : live
-      ? idea.continuity === "progress"
+      ? view.continuity === "progress"
         ? t.today.liveProgressBadge
         : t.today.liveBadge
       : t.today.mockBadge;
 
-  const name = idea?.idea_name ?? t.today.ideaName;
-  const why = idea?.why_fit ?? t.today.whyFitBody;
-  const income = idea?.income_band ?? t.today.incomeBandBody;
-  const doToday = idea?.do_today ?? t.today.doTodayBody;
-  const dont = idea?.dont_today ?? t.today.dontTodayBody;
-  const risk = idea?.biggest_risk ?? t.today.riskBody;
-  const sources = idea?.sources ? Object.entries(idea.sources) : [];
-  const evidence = idea?.market_evidence ?? [];
-  const day7 = idea?.day7_plan ?? [];
-  const pdfHref = idea?.pdf_url;
-  const note = idea
-    ? `${t.today.pdfNote} · ${idea.report_date}`
+  const name = view?.idea_name ?? t.today.ideaName;
+  const why = view?.why_fit ?? t.today.whyFitBody;
+  const income = view?.income_band ?? t.today.incomeBandBody;
+  const doToday = view?.do_today ?? t.today.doTodayBody;
+  const dont = view?.dont_today ?? t.today.dontTodayBody;
+  const risk = view?.biggest_risk ?? t.today.riskBody;
+  const sources = view?.sources ? Object.entries(view.sources) : [];
+  const evidence = view?.market_evidence ?? [];
+  const day7 = view?.day7_plan ?? [];
+  const pdfHref = view?.pdf_url;
+  const note = view
+    ? `${t.today.pdfNote} · ${view.report_date}`
     : t.today.pdfNote;
 
   return (
@@ -50,7 +51,7 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
             <span className="hero-title-accent">{t.today.titleAccent}</span>
           </h1>
           <p className="hero-sub">{t.tagline}</p>
-          <p className="hero-note">{idea?.one_liner ?? t.today.subtitle}</p>
+          <p className="hero-note">{view?.one_liner ?? t.today.subtitle}</p>
           <div className="row-actions">
             {pdfHref ? (
               <a className="btn btn-primary btn-press" href={pdfHref} target="_blank" rel="noreferrer">
@@ -92,11 +93,11 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
               <p className="mock-badge">{badge}</p>
               <h2>{t.today.ideaLabel}</h2>
               <p className="idea-name">{name}</p>
-              {idea && (idea.fit_score != null || idea.passive_score != null) ? (
+              {view && (view.fit_score != null || view.passive_score != null) ? (
                 <p className="score-row">
-                  {t.today.fitScore}: {idea.fit_score ?? "—"}/10
+                  {t.today.fitScore}: {view.fit_score ?? "—"}/10
                   <span aria-hidden> · </span>
-                  {t.today.passiveScore}: {idea.passive_score ?? "—"}/10
+                  {t.today.passiveScore}: {view.passive_score ?? "—"}/10
                 </p>
               ) : null}
             </header>
@@ -109,22 +110,22 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
                 <dt>{t.today.incomeBand}</dt>
                 <dd>{income}</dd>
               </div>
-              {idea?.startup_capital ? (
+              {view?.startup_capital ? (
                 <div className="fact-row motion-stagger" style={{ ["--i" as string]: 2 }}>
                   <dt>{t.today.capital}</dt>
-                  <dd>{idea.startup_capital}</dd>
+                  <dd>{view.startup_capital}</dd>
                 </div>
               ) : null}
-              {idea?.time_per_week ? (
+              {view?.time_per_week ? (
                 <div className="fact-row motion-stagger" style={{ ["--i" as string]: 3 }}>
                   <dt>{t.today.timeWeek}</dt>
-                  <dd>{idea.time_per_week}</dd>
+                  <dd>{view.time_per_week}</dd>
                 </div>
               ) : null}
-              {idea?.first_revenue_eta ? (
+              {view?.first_revenue_eta ? (
                 <div className="fact-row motion-stagger" style={{ ["--i" as string]: 4 }}>
                   <dt>{t.today.firstRevenue}</dt>
-                  <dd>{idea.first_revenue_eta}</dd>
+                  <dd>{view.first_revenue_eta}</dd>
                 </div>
               ) : null}
               <div className="fact-row motion-stagger" style={{ ["--i" as string]: 5 }}>
@@ -199,7 +200,7 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
                 </>
               ) : null}
             </p>
-            {idea?.disclaimer ? <p className="idea-disclaimer">{idea.disclaimer}</p> : null}
+            {view?.disclaimer ? <p className="idea-disclaimer">{view.disclaimer}</p> : null}
           </aside>
         </div>
       </section>

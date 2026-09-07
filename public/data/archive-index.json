@@ -1,16 +1,30 @@
 {
-  "updated_at": "2026-09-06T20:00:37Z",
+  "updated_at": "2026-09-07T01:34:09Z",
   "items": [
     {
       "report_date": "2026-09-06",
       "idea_id": "ops-checklist-sub",
       "idea_name": "垂直行业 AI 运维检查清单（订阅制）",
       "one_liner": "把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
-      "continuity": "new",
+      "continuity": "progress",
       "income_kind": "business_revenue",
       "is_mock": false,
       "json_url": "/data/ideas/2026-09-06.json",
-      "pdf_url": "/reports/XingAI_Daily_Passive_Income_Idea_Report_2026-09-06.pdf"
+      "pdf_url": "/reports/XingAI_Daily_Passive_Income_Idea_Report_2026-09-06.pdf",
+      "locales": {
+        "zh": {
+          "idea_name": "垂直行业 AI 运维检查清单（订阅制）",
+          "one_liner": "把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。"
+        },
+        "en": {
+          "idea_name": "Vertical AI ops checklist (subscription)",
+          "one_liner": "Productize cloud/.NET/ops checklists into a small-team subscription list + reminders — not a generic ChatGPT shell."
+        },
+        "ko": {
+          "idea_name": "수직 산업 AI 운영 체크리스트(구독)",
+          "one_liner": "클라우드/.NET/운영 점검 항목을 소규모 팀이 구독할 수 있는 체크리스트+알림으로 제품화 — 범용 ChatGPT 껍데기가 아님."
+        }
+      }
     }
   ]
 }

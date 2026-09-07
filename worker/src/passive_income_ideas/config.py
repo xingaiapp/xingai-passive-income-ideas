@@ -100,4 +100,15 @@ def load_idea_catalog(path: Path | None = None) -> list[dict[str, Any]]:
     ideas = data.get("ideas") or []
     if not isinstance(ideas, list) or not ideas:
         raise ValueError("idea_catalog.yaml must contain a non-empty ideas list")
-    return [x for x in ideas if isinstance(x, dict)]
+    out = [x for x in ideas if isinstance(x, dict)]
+    locales_path = config_dir() / "idea_locales.yaml"
+    if locales_path.exists():
+        loc_root = _load_yaml(locales_path)
+        by_id = loc_root.get("ideas") or {}
+        if isinstance(by_id, dict):
+            for idea in out:
+                iid = str(idea.get("idea_id") or "")
+                pack = by_id.get(iid)
+                if isinstance(pack, dict):
+                    idea["locales"] = pack
+    return out

@@ -5,7 +5,7 @@ import { usePrefs } from "@/components/prefs-provider";
 import type { ArchiveIndex } from "@/lib/latest-idea";
 
 export function ArchiveClient({ archive }: { archive: ArchiveIndex }) {
-  const { t } = usePrefs();
+  const { t, locale } = usePrefs();
   const items = archive.items ?? [];
 
   return (
@@ -19,29 +19,34 @@ export function ArchiveClient({ archive }: { archive: ArchiveIndex }) {
         <p className="empty-state">{t.archive.empty}</p>
       ) : (
         <ul className="archive-list">
-          {items.map((item) => (
-            <li key={item.report_date} className="archive-card">
-              <p className="archive-date">{item.report_date}</p>
-              <h2 className="archive-name">{item.idea_name}</h2>
-              <p className="archive-line">{item.one_liner}</p>
-              <p className="archive-meta">
-                {item.continuity === "progress" ? t.today.liveProgressBadge : t.today.liveBadge}
-                {item.is_mock ? ` · ${t.today.mockBadge}` : ""}
-              </p>
-              <div className="row-actions archive-actions">
-                {item.pdf_url ? (
-                  <a className="btn btn-primary btn-press" href={item.pdf_url} target="_blank" rel="noreferrer">
-                    {t.today.ctaPdf}
-                  </a>
-                ) : null}
-                {item.json_url ? (
-                  <a className="btn btn-press" href={item.json_url} target="_blank" rel="noreferrer">
-                    {t.archive.openJson}
-                  </a>
-                ) : null}
-              </div>
-            </li>
-          ))}
+          {items.map((item) => {
+            const loc = item.locales?.[locale];
+            const name = loc?.idea_name ?? item.idea_name;
+            const line = loc?.one_liner ?? item.one_liner;
+            return (
+              <li key={item.report_date} className="archive-card">
+                <p className="archive-date">{item.report_date}</p>
+                <h2 className="archive-name">{name}</h2>
+                <p className="archive-line">{line}</p>
+                <p className="archive-meta">
+                  {item.continuity === "progress" ? t.today.liveProgressBadge : t.today.liveBadge}
+                  {item.is_mock ? ` · ${t.today.mockBadge}` : ""}
+                </p>
+                <div className="row-actions archive-actions">
+                  {item.pdf_url ? (
+                    <a className="btn btn-primary btn-press" href={item.pdf_url} target="_blank" rel="noreferrer">
+                      {t.today.ctaPdf}
+                    </a>
+                  ) : null}
+                  {item.json_url ? (
+                    <a className="btn btn-press" href={item.json_url} target="_blank" rel="noreferrer">
+                      {t.archive.openJson}
+                    </a>
+                  ) : null}
+                </div>
+              </li>
+            );
+          })}
         </ul>
       )}
 

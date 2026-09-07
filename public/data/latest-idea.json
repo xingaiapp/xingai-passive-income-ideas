@@ -1,10 +1,10 @@
 {
   "report_date": "2026-09-06",
-  "generated_at": "2026-09-06T20:00:37Z",
+  "generated_at": "2026-09-07T01:34:09Z",
   "idea_id": "ops-checklist-sub",
   "idea_name": "垂直行业 AI 运维检查清单（订阅制）",
   "one_liner": "把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
-  "continuity": "new",
+  "continuity": "progress",
   "fit_score": 8,
   "passive_score": 6,
   "why_fit": "画像：53 岁，Austin, Texas, USA，背景 软件工程、.NET、云平台、AI 与工程管理。目标：财富自由与长期被动收入。技能匹配：.NET, cloud, AI, eng-management, B2B。该 Idea：把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
@@ -14,7 +14,7 @@
   "time_per_week": "验证期每周 4–6 小时；若无人付费意向则停止",
   "first_revenue_eta": "若 10 次访谈中出现付费意向，最早 2–4 周可收第一笔（预售/试点，未核实）",
   "scalability": "中：可从单一垂直扩展到相邻行业；提醒可产品化",
-  "do_today": "30 分钟：列出 5 个工程负责人，约其中 3 人做 15 分钟访谈（只问：哪些检查仍靠表格/聊天？）",
+  "do_today": "连续性更新（第 2 次选中，仍为本主 Idea）：按 7 天计划推进到步骤 2/6。 今天 30 分钟：D2–D3：完成至少 5 次访谈并记录痛点频率",
   "dont_today": "不要买广告、不要先写完整 SaaS、不要注册复杂公司结构",
   "biggest_risk": "礼貌兴趣 ≠ 付费意愿；若 10 次访谈零付费意向，立即停止并换题",
   "stop_rules": [
@@ -111,6 +111,329 @@
       "as_of": "2026-05-01",
       "verified": false,
       "note": "未核实与本 Idea 的直接因果关系；web probe OK 2026-09-06 (HTTP 200)；page title: OES Home : U.S. Bureau of Labor Statistics"
+    }
+  },
+  "locales": {
+    "zh": {
+      "idea_name": "垂直行业 AI 运维检查清单（订阅制）",
+      "one_liner": "把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
+      "why_fit": "画像：53 岁，Austin, Texas, USA，背景 软件工程、.NET、云平台、AI 与工程管理。目标：财富自由与长期被动收入。技能匹配：.NET, cloud, AI, eng-management, B2B。该 Idea：把云/.NET/运维检查项产品化成小团队可订阅的清单+提醒，而不是通用 ChatGPT 壳。",
+      "income_band": "商业收入（非投资收益）估计：验证后 90 天约 $0–2,000/月（未核实；未做付费验证）",
+      "startup_capital": "启动资金约 $0–500（域名、邮箱、基础托管）；无需融资",
+      "time_per_week": "验证期每周 4–6 小时；若无人付费意向则停止",
+      "first_revenue_eta": "若 10 次访谈中出现付费意向，最早 2–4 周可收第一笔（预售/试点，未核实）",
+      "scalability": "中：可从单一垂直扩展到相邻行业；提醒可产品化",
+      "do_today": "连续性更新（第 2 次选中，仍为本主 Idea）：按 7 天计划推进到步骤 2/6。今天 30 分钟：D2–D3：完成至少 5 次访谈并记录痛点频率",
+      "dont_today": "不要买广告、不要先写完整 SaaS、不要注册复杂公司结构",
+      "biggest_risk": "礼貌兴趣 ≠ 付费意愿；若 10 次访谈零付费意向，立即停止并换题",
+      "stop_rules": [
+        "10 次目标用户访谈仍无明确付费意向",
+        "需要全职 3 个月以上才能做出最小可售版本",
+        "依赖无法核实的流量/收益承诺渠道"
+      ],
+      "day7_plan": [
+        "D1：完成 3 次访谈预约与问题清单",
+        "D2–D3：完成至少 5 次访谈并记录痛点频率",
+        "D4：起草一页价值主张（谁、什么痛、价格锚点）",
+        "D5：做出 1 份可交付检查清单样例",
+        "D6：向 2 位访谈对象展示样例，问是否愿付 $29–$99/月试点",
+        "D7：写下 go/no-go"
+      ],
+      "day30_goals": [
+        "至少 15 次访谈记录",
+        "1 个可重复交付的清单模板",
+        "至少 1 个付费试点或书面预购意向"
+      ],
+      "business_model": "订阅制商业收入：基础清单 $29/月，团队版 $99/月。这不是分红或投资回报率。",
+      "competition": "通用项目管理与 ChatGPT 工作流是替代品；差异化在垂直检查项与责任边界，而不是空白 AI 对话框。",
+      "market_evidence": [
+        {
+          "kind": "inference",
+          "text": "中小团队仍常用表格/聊天做发布与巡检（基于职业经验推断，非正式调研统计）。",
+          "source_ids": []
+        },
+        {
+          "kind": "fact",
+          "text": "美国自雇者需了解 self-employment tax 义务（IRS 页面存在）。",
+          "source_ids": [
+            "s_irs"
+          ]
+        },
+        {
+          "kind": "fact",
+          "text": "美国小企业管理局（SBA）提供创办与经营小企业的公开指引入口（页面存在；非对本 Idea 需求量的统计）。",
+          "source_ids": [
+            "s_sba"
+          ]
+        },
+        {
+          "kind": "fact",
+          "text": "Microsoft Azure Well-Architected 提供运维可靠性检查框架（公开文档存在；说明检查清单类内容有成熟参照物，不证明付费意愿）。",
+          "source_ids": [
+            "s_azure_waf"
+          ]
+        },
+        {
+          "kind": "recommendation",
+          "text": "先卖清单与提醒，再考虑软件化；用预售验证价格。",
+          "source_ids": []
+        },
+        {
+          "kind": "inference",
+          "text": "已对目录来源做可达性探测：s_irs, s_sba, s_azure_waf, s_bls 可打开。这不证明市场需求或收入数字。",
+          "source_ids": [
+            "s_irs",
+            "s_sba",
+            "s_azure_waf",
+            "s_bls"
+          ]
+        }
+      ],
+      "disclaimer": "仅供参考，不构成金融、税务或商业建议。不保证收入。投资收益与商业收入已分开标注。未核实内容不得当作事实。",
+      "sources": {
+        "s_irs": {
+          "title": "IRS self-employment tax overview",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "税务提醒页面存在；非对本 Idea 收入的预测"
+        },
+        "s_sba": {
+          "title": "SBA — Start your business",
+          "url": "https://www.sba.gov/business-guide/launch-your-business",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "创办小企业公开指引入口；非市场需求量证明"
+        },
+        "s_azure_waf": {
+          "title": "Azure Well-Architected — Reliability",
+          "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "公开运维检查框架；竞争/参照上下文，非收入预测"
+        },
+        "s_bls": {
+          "title": "BLS Occupational Employment — software developers (context only)",
+          "url": "https://www.bls.gov/oes/",
+          "as_of": "2026-05-01",
+          "verified": false,
+          "note": "未核实与本 Idea 的直接因果关系"
+        }
+      }
+    },
+    "en": {
+      "idea_name": "Vertical AI ops checklist (subscription)",
+      "one_liner": "Productize cloud/.NET/ops checklists into a small-team subscription list + reminders — not a generic ChatGPT shell.",
+      "why_fit": "Profile: age 53, Austin, Texas, USA; background Software engineering, .NET, cloud platforms, AI, and engineering management. Goal: Financial independence and long-term passive income. Skills match: .NET, cloud, AI, eng-management, B2B. This Idea: Productize cloud/.NET/ops checklists into a small-team subscription list + reminders — not a generic ChatGPT shell.",
+      "income_band": "Business revenue (not investment return) estimate: about $0–2,000/mo in 90 days after validation (未核实; no paid validation yet)",
+      "startup_capital": "Startup capital about $0–500 (domain, email, basic hosting); no fundraising required",
+      "time_per_week": "Validation: 4–6 hours/week; stop if there is no paid intent",
+      "first_revenue_eta": "If paid intent appears in 10 interviews, first revenue possible in 2–4 weeks (pre-sale/pilot, 未核实)",
+      "scalability": "Medium: expand from one vertical to adjacent industries; reminders can be productized",
+      "do_today": "Continuity update (pick #2, same primary Idea): advance 7-day plan to step 2/6. Today (30 min): D2–D3: Complete at least 5 interviews; log pain frequency",
+      "dont_today": "Don’t buy ads, don’t build a full SaaS first, don’t set up complex company structures",
+      "biggest_risk": "Polite interest ≠ willingness to pay; if 10 interviews yield zero paid intent, stop and switch Ideas",
+      "stop_rules": [
+        "10 target-user interviews with no clear paid intent",
+        "Needs 3+ months full-time to reach a sellable minimum",
+        "Depends on unverifiable traffic/revenue promise channels"
+      ],
+      "day7_plan": [
+        "D1: Book 3 interviews and finalize the question list",
+        "D2–D3: Complete at least 5 interviews; log pain frequency",
+        "D4: Draft a one-page value prop (who, pain, price anchor)",
+        "D5: Produce one deliverable checklist sample",
+        "D6: Show the sample to 2 interviewees; ask about $29–$99/mo pilot",
+        "D7: Write go/no-go"
+      ],
+      "day30_goals": [
+        "At least 15 interview notes",
+        "One reusable checklist template",
+        "At least one paid pilot or written pre-order intent"
+      ],
+      "business_model": "Subscription business revenue: base checklist $29/mo, team $99/mo. Not dividends or investment yield.",
+      "competition": "Generic PM tools and ChatGPT workflows are substitutes; differentiation is vertical checks + accountability — not a blank AI chat box.",
+      "market_evidence": [
+        {
+          "kind": "inference",
+          "text": "Small teams still often run release/ops checks in sheets/chat (career experience inference, not a formal survey).",
+          "source_ids": []
+        },
+        {
+          "kind": "fact",
+          "text": "U.S. self-employed people need to understand self-employment tax obligations (IRS page exists).",
+          "source_ids": [
+            "s_irs"
+          ]
+        },
+        {
+          "kind": "fact",
+          "text": "U.S. SBA publishes a public start-a-business guide (page exists; not a demand statistic for this Idea).",
+          "source_ids": [
+            "s_sba"
+          ]
+        },
+        {
+          "kind": "fact",
+          "text": "Azure Well-Architected publishes reliability check frameworks (public docs exist; shows checklist content has mature references — not paid demand).",
+          "source_ids": [
+            "s_azure_waf"
+          ]
+        },
+        {
+          "kind": "recommendation",
+          "text": "Sell the checklist + reminders first; software later. Validate price with pre-sales.",
+          "source_ids": []
+        },
+        {
+          "kind": "inference",
+          "text": "Catalog sources probed for reachability: s_irs, s_sba, s_azure_waf, s_bls opened. This does not prove market demand or income figures.",
+          "source_ids": [
+            "s_irs",
+            "s_sba",
+            "s_azure_waf",
+            "s_bls"
+          ]
+        }
+      ],
+      "disclaimer": "Informational only — not financial, tax, or business advice. No income guarantees. Investment returns and business revenue are labeled separately. Unverified claims stay marked 未核实.",
+      "sources": {
+        "s_irs": {
+          "title": "IRS self-employment tax overview",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "Tax overview page exists; not an income forecast for this Idea"
+        },
+        "s_sba": {
+          "title": "SBA — Start your business",
+          "url": "https://www.sba.gov/business-guide/launch-your-business",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "Public start-business guide; not proof of market demand"
+        },
+        "s_azure_waf": {
+          "title": "Azure Well-Architected — Reliability",
+          "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "Public ops checklist framework; competitive/context only, not an income forecast"
+        },
+        "s_bls": {
+          "title": "BLS Occupational Employment — software developers (context only)",
+          "url": "https://www.bls.gov/oes/",
+          "as_of": "2026-05-01",
+          "verified": false,
+          "note": "未核实 direct causal link to this Idea"
+        }
+      }
+    },
+    "ko": {
+      "idea_name": "수직 산업 AI 운영 체크리스트(구독)",
+      "one_liner": "클라우드/.NET/운영 점검 항목을 소규모 팀이 구독할 수 있는 체크리스트+알림으로 제품화 — 범용 ChatGPT 껍데기가 아님.",
+      "why_fit": "프로필: 53세, Austin, Texas, USA, 배경 소프트웨어 엔지니어링, .NET, 클라우드, AI, 엔지니어링 관리. 목표: 경제적 자유와 장기 수동 소득. 기술 매칭: .NET, cloud, AI, eng-management, B2B. 이 Idea: 클라우드/.NET/운영 점검 항목을 소규모 팀이 구독할 수 있는 체크리스트+알림으로 제품화 — 범용 ChatGPT 껍데기가 아님.",
+      "income_band": "사업 매출(투자 수익 아님) 추정: 검증 후 90일 약 $0–2,000/월 (未核实; 유료 검증 없음)",
+      "startup_capital": "시작 자본 약 $0–500(도메인·이메일·기본 호스팅); 투자 유치 불필요",
+      "time_per_week": "검증기 주 4–6시간; 유료 의도 없으면 중단",
+      "first_revenue_eta": "인터뷰 10회 중 유료 의도가 있으면 2–4주 내 첫 매출 가능(사전판매/파일럿, 未核实)",
+      "scalability": "중: 한 수직에서 인접 산업으로 확장 가능; 알림은 제품화 가능",
+      "do_today": "연속 업데이트(2번째 선택, 동일 메인 Idea): 7일 계획 단계 2/6로 진행. 오늘 30분: D2–D3: 인터뷰 5회 이상 + 고통 빈도 기록",
+      "dont_today": "광고 구매·풀 SaaS 선구축·복잡한 회사 구조는 하지 말 것",
+      "biggest_risk": "예의 바른 관심 ≠ 지불 의사; 인터뷰 10회 유료 의도 0이면 중단하고 Idea 교체",
+      "stop_rules": [
+        "타깃 유저 인터뷰 10회에도 명확한 유료 의도 없음",
+        "판매 가능한 최소 버전까지 풀타임 3개월 이상 필요",
+        "검증 불가한 트래픽/수익 약속 채널에 의존"
+      ],
+      "day7_plan": [
+        "D1: 인터뷰 3건 예약 + 질문 목록",
+        "D2–D3: 인터뷰 5회 이상 + 고통 빈도 기록",
+        "D4: 1페이지 가치제안(누구·고통·가격 앵커)",
+        "D5: 납품 가능한 체크리스트 샘플 1개",
+        "D6: 인터뷰 2명에게 샘플 보여주고 $29–$99/월 파일럿 의사 확인",
+        "D7: go/no-go 작성"
+      ],
+      "day30_goals": [
+        "인터뷰 기록 15건 이상",
+        "재사용 가능한 체크리스트 템플릿 1개",
+        "유료 파일럿 또는 서면 사전구매 의도 1건 이상"
+      ],
+      "business_model": "구독 사업 매출: 기본 $29/월, 팀 $99/월. 배당·투자 수익률이 아님.",
+      "competition": "범용 PM·ChatGPT 워크플로가 대체재; 차별점은 수직 점검+책임 경계.",
+      "market_evidence": [
+        {
+          "kind": "inference",
+          "text": "소규모 팀은 여전히 표/채팅으로 배포·운영 점검을 하는 경우가 많음(경력 추론, 공식 설문 아님).",
+          "source_ids": []
+        },
+        {
+          "kind": "fact",
+          "text": "미국 자영업자는 self-employment tax 의무를 이해해야 함(IRS 페이지 존재).",
+          "source_ids": [
+            "s_irs"
+          ]
+        },
+        {
+          "kind": "fact",
+          "text": "미국 SBA가 창업 공개 가이드를 제공(페이지 존재; 이 Idea 수요 통계 아님).",
+          "source_ids": [
+            "s_sba"
+          ]
+        },
+        {
+          "kind": "fact",
+          "text": "Azure Well-Architected가 신뢰성 점검 프레임을 공개(문서 존재; 유료 수요 증명 아님).",
+          "source_ids": [
+            "s_azure_waf"
+          ]
+        },
+        {
+          "kind": "recommendation",
+          "text": "먼저 체크리스트+알림을 팔고 소프트웨어는 나중에. 사전판매로 가격 검증.",
+          "source_ids": []
+        },
+        {
+          "kind": "inference",
+          "text": "카탈로그 출처 접근성 확인: s_irs, s_sba, s_azure_waf, s_bls 열림. 수요나 수입 숫자를 증명하지 않습니다.",
+          "source_ids": [
+            "s_irs",
+            "s_sba",
+            "s_azure_waf",
+            "s_bls"
+          ]
+        }
+      ],
+      "disclaimer": "정보 제공용 — 금융·세무·사업 조언이 아닙니다. 수입을 보장하지 않습니다. 투자 수익과 사업 매출을 구분합니다. 미확인 내용은 未核实로 표시합니다.",
+      "sources": {
+        "s_irs": {
+          "title": "IRS self-employment tax overview",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "세무 개요 페이지 존재; 이 Idea 수입 예측 아님"
+        },
+        "s_sba": {
+          "title": "SBA — Start your business",
+          "url": "https://www.sba.gov/business-guide/launch-your-business",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "공개 창업 가이드; 수요 증명 아님"
+        },
+        "s_azure_waf": {
+          "title": "Azure Well-Architected — Reliability",
+          "url": "https://learn.microsoft.com/en-us/azure/well-architected/reliability/",
+          "as_of": "2026-09-06",
+          "verified": true,
+          "note": "공개 운영 점검 프레임; 맥락용, 수입 예측 아님"
+        },
+        "s_bls": {
+          "title": "BLS Occupational Employment — software developers (context only)",
+          "url": "https://www.bls.gov/oes/",
+          "as_of": "2026-05-01",
+          "verified": false,
+          "note": "이 Idea와 직접 인과 未核实"
+        }
+      }
     }
   }
 }
