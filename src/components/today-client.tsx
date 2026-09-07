@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePrefs } from "@/components/prefs-provider";
-import { ideaForLocale, type LatestIdea } from "@/lib/latest-idea";
+import { ideaForLocale, type LatestIdea } from "@/lib/idea-locale";
 
 function evidenceLabel(kind: string, labels: { fact: string; inference: string; recommendation: string }) {
   if (kind === "fact") return labels.fact;

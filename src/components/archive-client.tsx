@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePrefs } from "@/components/prefs-provider";
-import type { ArchiveIndex } from "@/lib/latest-idea";
+import type { ArchiveIndex } from "@/lib/latest-idea-types";
 
 export function ArchiveClient({ archive }: { archive: ArchiveIndex }) {
   const { t, locale } = usePrefs();
