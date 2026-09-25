@@ -226,6 +226,10 @@ export function TodayClient({ idea }: { idea: LatestIdea | null }) {
           {" · "}
           <Link href="/legal/disclaimer">{t.legal.disclaimer}</Link>
         </p>
+        <p>
+          Part of <a href="https://xingai.app/">XingAI</a> — AI decision systems for everyday life ·{" "}
+          <a href="https://xingai.app/apps">All apps</a>
+        </p>
       </footer>
     </div>
   );
