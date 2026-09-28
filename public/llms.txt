@@ -1,8 +1,9 @@
 # XingAI Passive Income Idea
 
-> Daily one-Idea passive income research report for a defined operator profile. Email Summary + A4 PDF. Informational only — not financial advice.
+> One researched passive-income Idea for a defined operator profile. Web board + optional email Summary / A4 PDF. Informational only — not financial advice. No income guarantees.
 
 - Product: https://passive.xingai.app/
-- Primary flow: read today’s Idea → 30-minute action → optional PDF/email when worker is live
+- Status: public demo — latest published snapshot (worker daily cadence planned)
+- Primary flow: read latest Idea → 30-minute action → optional PDF
 - Languages: en, zh, ko
-- Disclaimer: suggestions only; no income guarantees; separate investment returns vs business revenue
+- Disclaimer: suggestions only; separate investment returns vs business revenue; verify before you act

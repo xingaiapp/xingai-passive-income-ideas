@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for XingAI Passive Income Idea (daily.xingai.app).",
+  description: "Terms of Service for XingAI Passive Income Idea (passive.xingai.app).",
   alternates: { canonical: "/legal/terms" },
 };
 

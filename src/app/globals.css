@@ -776,9 +776,15 @@ a.btn {
   color: var(--muted);
 }
 
-.legal h1 {
+.legal h1,
+.legal h2.legal-lang-title {
   color: var(--foreground);
   font-family: var(--font-display);
+}
+
+.legal h2.legal-lang-title {
+  font-size: 1.35rem;
+  margin-top: 0.25rem;
 }
 
 .legal hr {

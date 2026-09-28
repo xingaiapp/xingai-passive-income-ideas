@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     template: "%s · XingAI Passive Income Idea",
   },
   description:
-    "Daily one-Idea passive income research report: email Summary + A4 PDF. Informational only — not financial advice.",
+    "One-Idea passive income research: web board, email Summary + A4 PDF when research runs. Informational only — not financial advice.",
   alternates: { canonical: SITE_URL },
   openGraph: {
     title: "XingAI Passive Income Idea",
-    description: "One verified Idea per day — fit, capital, time, risks, and a 30-minute next step.",
+    description: "Latest researched Idea for a defined profile — fit, capital, time, risks, and a 30-minute next step.",
     url: SITE_URL,
     siteName: "XingAI Passive Income Idea",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "XingAI Passive Income Idea",
-    description: "One verified Idea per day — fit, capital, time, risks, and a 30-minute next step.",
+    description: "Latest researched Idea for a defined profile — fit, capital, time, risks, and a 30-minute next step.",
     images: ["/og-image.svg"],
   },
   icons: {
@@ -69,7 +69,7 @@ const jsonLd = {
       operatingSystem: "Web",
       url: SITE_URL,
       description:
-        "Daily one-Idea passive income research with email Summary and PDF. Informational only.",
+        "One-Idea passive income research with web board, email Summary, and PDF. Informational only. Public demo.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     },
     {
@@ -80,7 +80,7 @@ const jsonLd = {
           name: "What is Passive Income Idea 智报?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A daily report that picks one passive-income or cash-flow Idea for a defined operator profile, delivered as email Summary plus PDF at passive.xingai.app.",
+            text: "A research product that picks one passive-income or cash-flow Idea for a defined operator profile, shown on the web board with optional email Summary plus PDF at passive.xingai.app.",
           },
         },
         {
@@ -89,6 +89,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "No. It is informational and educational. Investment returns and business revenue are labeled separately. No income guarantees.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Will it guarantee passive income?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. Ideas can fail validation. Income bands are estimates with honest labels such as unverified. You decide whether to act.",
           },
         },
         {

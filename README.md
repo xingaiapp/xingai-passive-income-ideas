@@ -1,9 +1,16 @@
-**Version:** 0.2.5
+**Version:** 0.2.6
 
-Daily **one-Idea** passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
+One-Idea passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
-- **Product URL:** https://passive.xingai.app/
-- **Repository:** https://github.com/xingaiapp/xingai-passive-income-ideas (private)
+- **Product URL:** https://passive.xingai.app/ (public demo)
+- **Repository:** https://github.com/xingaiapp/xingai-passive-income-ideas (public)
+
+## Current version notes (0.2.6)
+
+- Privacy Policy rewritten for this product (no Daily Assistant / Gmail paste).
+- Honest “latest snapshot” copy — daily cadence returns when the worker runs.
+- FAQ JSON-LD includes the 4th question (no income guarantee).
+- Repo visibility set public so the catalog GitHub CTA works.
 
 ## What this product does
 
@@ -58,7 +65,8 @@ See [`.env.example`](./.env.example). Never commit secrets.
 
 - Idea body follows EN / 中文 / 한국어 (no more EN chrome + Chinese copy mix).
 - Desktop Today layout stacks full-width Idea panel under the intro (readable, not clipped).
-- Docs: [ADR 002](docs/adr/002-worker-publish-static-ui.md) — worker static publish + read-only UI (CQRS-style).
+- Docs: [ADR 002](docs/adr/002-worker-publish-static-ui.md) — worker static publish + read-only UI.
+- Docs: [ADR 003](docs/adr/003-cqrs-publish-boundary.md) — hard CQRS rule (worker writes / shell reads); Cursor rule `.cursor/rules/cqrs-publish-boundary.mdc`.
 
 ### 0.2.4
 

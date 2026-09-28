@@ -72,12 +72,12 @@ export const messages: Record<Locale, Messages> = {
   en: {
     brand: "Passive Income Idea",
     brandMark: "XingAI",
-    tagline: "One verified Idea per day — fit for your skills, capital, and stage. Not a list of random tips.",
+    tagline: "One researched Idea for a defined profile — not a tip dump. Cadence depends on the research worker.",
     nav: { today: "Today", archive: "Archive", how: "How it works", legal: "Legal" },
     today: {
-      title: "Today’s only Idea",
+      title: "The latest Idea",
       titleAccent: "worth acting on.",
-      subtitle: "Full report fields load from today’s research snapshot when available.",
+      subtitle: "Snapshot from the latest research publish — date shown on the PDF line.",
       ideaLabel: "Primary Idea",
       ideaName: "Niche AI ops checklist product (mock)",
       whyFit: "Why it fits you",
@@ -104,8 +104,8 @@ export const messages: Record<Locale, Messages> = {
       riskBody: "Demand may be polite interest only — stop if 10 talks yield zero paid intent (mock).",
       pdfNote: "Full A4 report PDF",
       mockBadge: "Mock Idea — offline fixture",
-      liveBadge: "Live Idea — from today’s research",
-      liveProgressBadge: "Live Idea — progress update",
+      liveBadge: "Published Idea — latest snapshot",
+      liveProgressBadge: "Published Idea — progress update",
       ctaHow: "How delivery works",
       ctaArchive: "Past Ideas",
       ctaPdf: "Open PDF",
@@ -156,19 +156,19 @@ export const messages: Record<Locale, Messages> = {
       items: [
         {
           q: "What is Passive Income Idea 智报?",
-          a: "A daily report that picks one passive-income or cash-flow Idea fit for your profile, with email Summary + PDF. Domain: passive.xingai.app.",
+          a: "A research product that picks one passive-income or cash-flow Idea fit for your profile, with a web board plus optional email Summary + PDF. Domain: passive.xingai.app. Daily cadence returns when the worker runs.",
         },
         {
           q: "Is this investment advice?",
-          a: "No. Ideas may include business revenue or cash-flow investments, but the product is educational. Separates investment returns from business income.",
+          a: "No. Informational only. Not financial, tax, or business advice. Separates investment returns from business income.",
         },
         {
           q: "Will it guarantee passive income?",
-          a: "No. Bands are estimates when sourced; unknowns stay 未核实. You decide what to run.",
+          a: "No. Ideas can fail validation. Income bands are estimates with honest labels such as 未核实. You decide whether to act.",
         },
         {
           q: "How is this different from Opportunity Radar?",
-          a: "Radar picks XingAI product bets. This report picks one personal wealth-building Idea for a defined operator profile.",
+          a: "Opportunity Radar selects XingAI product bets. This product selects one personal wealth-building Idea for a defined profile.",
         },
       ],
     },
@@ -176,12 +176,12 @@ export const messages: Record<Locale, Messages> = {
   zh: {
     brand: "被动收入 Idea",
     brandMark: "XingAI",
-    tagline: "每天只给 1 个值得执行的 Idea——贴合你的技能、资金与阶段，不是点子清单。",
+    tagline: "面向特定画像的被动收入 Idea——不是点子清单。更新节奏取决于研究 worker。",
     nav: { today: "今日", archive: "归档", how: "如何送达", legal: "法律" },
     today: {
-      title: "今日唯一 Idea",
+      title: "最新 Idea",
       titleAccent: "值得动手。",
-      subtitle: "有今日研究快照时，页面会加载完整字段。",
+      subtitle: "来自最近一次研究发布的快照——日期见 PDF 行。",
       ideaLabel: "主 Idea",
       ideaName: "垂直 AI 运维清单产品（模拟）",
       whyFit: "为什么适合你",
@@ -207,8 +207,8 @@ export const messages: Record<Locale, Messages> = {
       riskBody: "热情不等于付费意愿——若 10 次访谈仍无付费意向则停止（模拟）。",
       pdfNote: "完整 A4 PDF 报告",
       mockBadge: "模拟 Idea — 离线 fixture",
-      liveBadge: "今日研究 · 实时 Idea",
-      liveProgressBadge: "今日研究 · 连续性推进",
+      liveBadge: "已发布 Idea — 最新快照",
+      liveProgressBadge: "已发布 Idea — 进度更新",
       ctaHow: "如何送达",
       ctaArchive: "往日 Idea",
       ctaPdf: "打开 PDF",
@@ -255,7 +255,7 @@ export const messages: Record<Locale, Messages> = {
       items: [
         {
           q: "被动收入 Idea 智报是什么？",
-          a: "每日选出 1 个贴合你画像的被动收入/现金流 Idea，邮件 Summary + PDF。域名：passive.xingai.app。",
+          a: "为特定画像选出 1 个被动收入/现金流 Idea，网页看板 + 可选邮件 Summary 与 PDF。域名：passive.xingai.app。每日节奏在 worker 恢复后回来。",
         },
         {
           q: "这是投资建议吗？",
@@ -275,12 +275,12 @@ export const messages: Record<Locale, Messages> = {
   ko: {
     brand: "수동소득 Idea",
     brandMark: "XingAI",
-    tagline: "하루 하나의 검증 Idea — 기술·자본·단계에 맞춤. 잡다한 팁 목록이 아닙니다.",
+    tagline: "정해진 프로필용 수동소득 Idea — 팁 나열이 아닙니다. 주기는 리서치 worker에 따릅니다.",
     nav: { today: "오늘", archive: "보관", how: "전달 방식", legal: "법적" },
     today: {
-      title: "오늘의 단 하나 Idea",
+      title: "최신 Idea",
       titleAccent: "실행할 가치.",
-      subtitle: "오늘 리서치 스냅샷이 있으면 전체 필드가 표시됩니다.",
+      subtitle: "가장 최근 리서치 게시 스냅샷 — 날짜는 PDF 줄에 표시됩니다.",
       ideaLabel: "메인 Idea",
       ideaName: "니치 AI 운영 체크리스트 제품 (목)",
       whyFit: "왜 맞는지",
@@ -306,8 +306,8 @@ export const messages: Record<Locale, Messages> = {
       riskBody: "관심만 있고 지불 의사가 없을 수 있음 — 10회 인터뷰 후 유료 의도 없으면 중단 (목).",
       pdfNote: "전체 A4 PDF 리포트",
       mockBadge: "목 Idea — 오프라인 fixture",
-      liveBadge: "오늘 리서치 · 라이브 Idea",
-      liveProgressBadge: "오늘 리서치 · 연속 업데이트",
+      liveBadge: "게시된 Idea — 최신 스냅샷",
+      liveProgressBadge: "게시된 Idea — 진행 업데이트",
       ctaHow: "전달 방식",
       ctaArchive: "지난 Idea",
       ctaPdf: "PDF 열기",
@@ -354,7 +354,7 @@ export const messages: Record<Locale, Messages> = {
       items: [
         {
           q: "수동소득 Idea 지보란?",
-          a: "프로필에 맞는 수동소득/현금흐름 Idea를 하루 하나 고르고 메일 Summary + PDF로 보냅니다. 도메인: passive.xingai.app.",
+          a: "프로필에 맞는 수동소득/현금흐름 Idea 하나를 고르고 웹 보드 + 선택 메일 Summary/PDF로 보여줍니다. 도메인: passive.xingai.app. 일일 리듬은 worker가 다시 돌 때 복귀합니다.",
         },
         {
           q: "투자 조언인가요?",
