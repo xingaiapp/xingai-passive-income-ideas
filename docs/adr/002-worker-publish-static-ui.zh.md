@@ -3,7 +3,7 @@
 - **状态：** 已接受
 - **日期：** 2026-09-07
 - **层级：** Worker / Frontend / Data
-- **相关：** [ADR 001](001-product-boundary.zh.md)
+- **相关：** [ADR 001](001-product-boundary.zh.md)；[ADR 003](003-cqrs-publish-boundary.zh.md)（硬 CQRS 规则）
 
 ## 背景
 

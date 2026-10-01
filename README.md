@@ -1,11 +1,15 @@
-**Version:** 0.2.6
+**Version:** 0.2.7
 
 One-Idea passive-income research for a defined operator profile (software / .NET / cloud / AI / eng-management; Austin, US; wealth-building stage).
 
 - **Product URL:** https://passive.xingai.app/ (public demo)
 - **Repository:** https://github.com/xingaiapp/xingai-passive-income-ideas (public)
 
-## Current version notes (0.2.6)
+## Current version notes (0.2.7)
+
+- ADR-003 CQRS publish boundary (worker writes / shell reads) + Cursor rule; PLAN/ADR index updated.
+
+## Previous notes (0.2.6)
 
 - Privacy Policy rewritten for this product (no Daily Assistant / Gmail paste).
 - Honest “latest snapshot” copy — daily cadence returns when the worker runs.

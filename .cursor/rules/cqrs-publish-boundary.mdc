@@ -1,0 +1,42 @@
+---
+description: Enforce Passive Income Idea CQRS — worker computes/publishes, Next.js only reads static artifacts.
+globs:
+  - "src/**"
+  - "worker/**"
+  - "public/data/**"
+  - "docs/**"
+alwaysApply: true
+---
+
+# CQRS publish boundary (Passive Income Idea)
+
+```text
+Worker (generate / run-daily) = computes Idea + writes public artifacts
+Next.js shell                 = reads artifacts and renders
+React                         = presents fields; does not decide
+```
+
+Hard project rule. Do not move Idea research, scoring, probing, or PDF generation into request handlers or the browser.
+
+## Allowed on the web app
+
+- Read `public/data/*.json` and serve `public/reports/*.pdf`
+- Merge a precomputed `locales[lang]` pack for display
+- Chrome i18n, theme, navigation, legal pages
+
+## Forbidden on the request path
+
+- Re-score / pick Ideas, Jaccard continuity, SQLite memory writes
+- Live URL probing or OpenAI polish
+- Inventing or “healing” income bands, evidence, or fit scores
+- Regenerating PDF or sending Resend email from Next routes
+- Hiding a missed worker run by computing a fresh Idea in Vercel
+
+## New field workflow
+
+1. Worker snapshot + publish JSON/PDF  
+2. Then UI renders the new field  
+
+If the UI needs a number or claim, add it in the worker first.
+
+See `docs/adr/003-cqrs-publish-boundary.md`.

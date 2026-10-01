@@ -3,7 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-09-07
 - **Layer:** Worker / Frontend / Data
-- **Related:** [ADR 001](001-product-boundary.md)
+- **Related:** [ADR 001](001-product-boundary.md); [ADR 003](003-cqrs-publish-boundary.md) (hard CQRS rules)
 
 ## Context
 

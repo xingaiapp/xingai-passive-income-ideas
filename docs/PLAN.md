@@ -8,6 +8,7 @@
 - [x] Private GitHub repo + README / DISCLAIMER / PLAN
 - [x] ADR-001: product boundary (personal daily Idea report vs Invest 智报 vs Opportunity Radar)
 - [x] ADR-002: worker publish path — static JSON/PDF for read-only UI (+ en/zh/ko locale packs)
+- [x] ADR-003: CQRS publish boundary — worker writes; Next shell reads only (no request-path research)
 - [x] project-init public shell (chrome, i18n, theme, legal, SEO/AEO, dot-app Soon)
 - [x] Operator profile config (age/locale/skills/constraints) as versioned YAML
 - [x] Idea memory store (SQLite) for anti-repeat + “still best → progress update”
@@ -40,7 +41,7 @@
 
 1. Resend live schedule (`RESEND_API_KEY` + `PASSIVE_INCOME_REPORT_ENABLED=true`) when keys are available.
 2. Merge marketing `xingai-dot-app` Passive Income **live** PR if not on `main` yet.
-3. Optional: Google OAuth; deeper open-web research (new ADR before request-path compute).
+3. Optional: Google OAuth; deeper open-web research (**worker-side** only — see [ADR 003](adr/003-cqrs-publish-boundary.md); never request-path compute).
 
 ## PDF fixed outline
 
