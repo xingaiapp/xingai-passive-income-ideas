@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useCallback, useContext, useMemo, type ReactNode } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { messages, type Locale, type Messages } from "@/lib/i18n/messages";
+import { localizedPath, stripLocale } from "@/lib/i18n/paths";
 
 type PrefsCtx = {
   locale: Locale;
@@ -18,29 +12,25 @@ type PrefsCtx = {
 };
 
 const Ctx = createContext<PrefsCtx | null>(null);
-const LOCALE_KEY = "xingai-daily-locale";
 
-export function PrefsProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+/** The URL is the source of truth for the language; the switcher navigates to the same page in another locale. */
+export function PrefsProvider({ locale, children }: { locale: Locale; children: ReactNode }) {
+  const router = useRouter();
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const stored = window.localStorage.getItem(LOCALE_KEY) as Locale | null;
-    const next =
-      stored === "en" || stored === "zh" || stored === "ko" ? stored : "en";
-    setLocaleState(next);
-    document.documentElement.lang = next === "zh" ? "zh-CN" : next === "ko" ? "ko" : "en";
-  }, []);
-
-  const setLocale = useCallback((l: Locale) => {
-    setLocaleState(l);
-    window.localStorage.setItem(LOCALE_KEY, l);
-    document.documentElement.lang = l === "zh" ? "zh-CN" : l === "ko" ? "ko" : "en";
-  }, []);
-
-  const value = useMemo(
-    () => ({ locale, setLocale, t: messages[locale] }),
-    [locale, setLocale],
+  const setLocale = useCallback(
+    (l: Locale) => {
+      try {
+        document.cookie = `xingai.locale=${l};path=/;max-age=31536000;SameSite=Lax`;
+      } catch {
+        // storage can be blocked; navigation still works
+      }
+      router.push(localizedPath(l, stripLocale(pathname)));
+    },
+    [router, pathname],
   );
+
+  const value = useMemo(() => ({ locale, setLocale, t: messages[locale] }), [locale, setLocale]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/locale-link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { usePrefs } from "@/components/prefs-provider";
 import { IconClose, IconMenu, NavIcon } from "@/components/nav-icons";
 import { ThemeToggle } from "@/components/theme";
 import { locales, type Locale } from "@/lib/i18n/messages";
+import { stripLocale } from "@/lib/i18n/paths";
 
 const tabs = [
   { href: "/", key: "today" as const },
@@ -17,7 +18,7 @@ const tabs = [
 
 export function AppChrome({ children }: { children: React.ReactNode }) {
   const { t, locale, setLocale } = usePrefs();
-  const pathname = usePathname();
+  const pathname = stripLocale(usePathname());
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
 

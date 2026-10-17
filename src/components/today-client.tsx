@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/locale-link";
 import { usePrefs } from "@/components/prefs-provider";
 import { ideaForLocale, type LatestIdea } from "@/lib/idea-locale";
 

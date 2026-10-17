@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/locale-link";
 import { usePrefs } from "@/components/prefs-provider";
 import type { ArchiveIndex } from "@/lib/latest-idea-types";
 

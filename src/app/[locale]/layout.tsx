@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { notFound } from "next/navigation";
 import { Fraunces, Outfit } from "next/font/google";
 import { AppChrome } from "@/components/app-chrome";
 import { PrefsProvider } from "@/components/prefs-provider";
 import { AppThemeProvider } from "@/components/theme";
 import { getSiteUrl } from "@/lib/site-url";
-import "./globals.css";
+import { htmlLang, isLocale, localizedPath } from "@/lib/i18n/paths";
+import { locales, type Locale } from "@/lib/i18n/messages";
+import "../globals.css";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -20,7 +23,23 @@ const fraunces = Fraunces({
 
 const SITE_URL = getSiteUrl();
 
-export const metadata: Metadata = {
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+/** Unknown first segments (e.g. /foo.txt) must 404 instead of rendering a locale page. */
+export const dynamicParams = false;
+
+function languageAlternates() {
+  return {
+    en: SITE_URL,
+    "zh-CN": `${SITE_URL}${localizedPath("zh", "/")}`,
+    ko: `${SITE_URL}${localizedPath("ko", "/")}`,
+    "x-default": SITE_URL,
+  };
+}
+
+const baseMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "XingAI Passive Income Idea",
@@ -28,7 +47,6 @@ export const metadata: Metadata = {
   },
   description:
     "One-Idea passive income research: web board, email Summary + A4 PDF when research runs. Informational only — not financial advice.",
-  alternates: { canonical: SITE_URL },
   openGraph: {
     title: "XingAI Passive Income Idea",
     description: "Latest researched Idea for a defined profile — fit, capital, time, risks, and a 30-minute next step.",
@@ -48,6 +66,17 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale: raw } = await params;
+  const locale: Locale = isLocale(raw) ? raw : "en";
+  const url = locale === "en" ? SITE_URL : `${SITE_URL}${localizedPath(locale, "/")}`;
+  return {
+    ...baseMetadata,
+    alternates: { canonical: url, languages: languageAlternates() },
+    openGraph: { ...baseMetadata.openGraph, url, locale: locale === "zh" ? "zh_CN" : locale === "ko" ? "ko_KR" : "en_US" },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: [
@@ -112,9 +141,17 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
+
+export default async function RootLayout({ children, params }: Props) {
+  const { locale: raw } = await params;
+  if (!isLocale(raw)) notFound();
+  const locale: Locale = raw;
   return (
-    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${fraunces.variable}`}>
+    <html lang={htmlLang(locale)} suppressHydrationWarning className={`${outfit.variable} ${fraunces.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -128,7 +165,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body style={{ fontFamily: "var(--font-outfit), var(--font-sans)" }}>
         <AppThemeProvider>
-          <PrefsProvider>
+          <PrefsProvider locale={locale}>
             <AppChrome>{children}</AppChrome>
           </PrefsProvider>
         </AppThemeProvider>
